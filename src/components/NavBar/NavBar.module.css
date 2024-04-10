@@ -1,0 +1,7 @@
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+.navbar a {
+    color: white;
+}

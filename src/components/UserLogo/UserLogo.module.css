@@ -1,0 +1,12 @@
+.userLogo {
+    display: flex;
+    gap: 10px;
+}
+.userLogoImg {
+    padding: 10px;
+    background-color: grey;
+    border-radius: 20px;
+}
+.userLogoName {
+    color: white;
+}
