@@ -1,7 +1,12 @@
 .navbar {
     display: flex;
-    gap: 20px;
+    gap: 130px;
 }
 .navbar a {
-    color: white;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Lucida Bright';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
 }

@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Medium.ttf')
+        format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lucida Bright';
+    src: url('../assets/fonts/Lucidabright/LucidaBrightRegular.ttf')
+        format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lucida Grande';
+    src: url('../assets/fonts/Lucidagrande/lucidagrande.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lucida Grande';
+    src: url('../assets/fonts/Lucidagrande/lucidagrande_bold.ttf')
+        format('truetype');
+    font-weight: 700;
+    font-style: bold;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -7,9 +35,22 @@
 a {
     text-decoration: none;
 }
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+input:active {
+    border: none;
+}
+input:focus {
+    outline: none;
+}
+
 :root {
     --text-white: white;
-    --text-black: white;
+    --text-black: black;
     --text-light-black: #373737;
     --text-brown: #f5d7a9;
     --background-card: linear-gradient(
