@@ -4,13 +4,8 @@ import s from './CatalogComponent.module.css';
 const CatalogComponent = () => {
     return (
         <div className={s.catalogWrapper}>
+            <h2 className={s.catalogMainHeading}>Каталог</h2>
             <div className={s.catalogContainer}>
-                <CatalogCard
-                    cardButtonText="Купить"
-                    cardPrice="200"
-                    cardHeading="Наушники"
-                    cardImg="image/airpods1Card.png"
-                />
                 <CatalogCard
                     cardButtonText="Купить"
                     cardPrice="200"

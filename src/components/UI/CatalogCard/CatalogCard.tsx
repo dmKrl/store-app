@@ -19,8 +19,10 @@ const CatalogCard: FC<CatalogCardProps> = ({
         <div className={s.catalogCardBlock}>
             <div className={s.catalogCardContent}>
                 <img className={s.catalogCardImg} src={cardImg} alt="" />
-                <h5 className={s.catalogCardHeading}>{cardHeading}</h5>
-                <p className={s.catalogCardPrice}>{cardPrice}</p>
+                <div className={s.catalogCardDescription}>
+                    <h5 className={s.catalogCardHeading}>{cardHeading}</h5>
+                    <p className={s.catalogCardPrice}>{cardPrice}</p>
+                </div>
                 <CatalogButton>{cardButtonText}</CatalogButton>
             </div>
         </div>

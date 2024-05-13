@@ -10,8 +10,13 @@
 }
 .catalogCardContent {
     padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 .catalogCardImg {
+    max-width: 160px;
 }
 .catalogCardHeading {
     color: #000;
@@ -28,4 +33,10 @@
     font-style: normal;
     font-weight: 500;
     line-height: 109.971%;
+}
+.catalogCardDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
