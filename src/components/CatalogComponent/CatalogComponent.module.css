@@ -1,0 +1,7 @@
+.catalogWrapper {
+    width: 100%;
+}
+.catalogContainer {
+    display: flex;
+    gap: 20px;
+}

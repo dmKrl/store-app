@@ -1,4 +1,4 @@
-import MainButton from '../UI/MainButton';
+import MainButton from '../UI/MainButton/MainButton';
 import s from './TopContent.module.css';
 
 const TopContent = () => {
@@ -21,7 +21,10 @@ const TopContent = () => {
                     </ul>
                 </div>
             </div>
-            <div className={s.topRight}></div>
+            <div className={s.topRight}>
+                <p className={s.topRightText}>AirPods</p>
+                <img src="image/topheadphones.png" alt="" />
+            </div>
         </div>
     );
 };
