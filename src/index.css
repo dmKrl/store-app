@@ -41,6 +41,17 @@ button {
     cursor: pointer;
 }
 
+html,
+body {
+    height: 100%;
+    min-height: 100vh;
+    background: radial-gradient(
+        2406.89% 286.92% at 308.68% 294.26%,
+        #e0e0e0 0%,
+        #acacad 100%
+    );
+}
+
 input:active {
     border: none;
 }

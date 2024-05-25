@@ -23,7 +23,7 @@ const TopContent = () => {
             </div>
             <div className={s.topRight}>
                 <p className={s.topRightText}>AirPods</p>
-                <img src="image/topheadphones.png" alt="" />
+                <img src="image/topheadphones.png" alt="headphones" />
             </div>
         </div>
     );
