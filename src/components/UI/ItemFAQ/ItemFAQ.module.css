@@ -1,0 +1,24 @@
+.itemFAQBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 766px;
+    max-width: 766px;
+    padding: 30px 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.itemFAQBlock:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.itemFAQBlock p {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 109.971%;
+}
+.itemFAQBlock button {
+    border-radius: 267px;
+    display: flex;
+}
