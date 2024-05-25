@@ -6,9 +6,8 @@ function App() {
     return (
         <div className="app">
             <div className="wrapper">
-                <div className="container">
                     <AppRoutes />
-                </div>
+                
             </div>
         </div>
     );
