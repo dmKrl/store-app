@@ -1,3 +1,4 @@
+import About from '../About/About';
 import CatalogComponent from '../CatalogComponent/CatalogComponent';
 import Characteristics from '../Characteristics/Characteristics';
 import TopContent from '../TopContent/TopContent';
@@ -8,6 +9,7 @@ const MainLayouts = () => {
             <TopContent />
             <CatalogComponent />
             <Characteristics />
+            <About />
         </div>
     );
 };

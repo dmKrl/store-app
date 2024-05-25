@@ -76,6 +76,6 @@
 }
 .characteristicsDown img {
     position: absolute;
-    bottom: 0px;
+    bottom: -30px;
     right: 0;
 }
