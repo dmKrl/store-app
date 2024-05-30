@@ -12,7 +12,7 @@ const Header = () => {
                 <div className="header__logo">
                     <Link to="/">
                         <img
-                            src={`${imgPath.imagePath}/image/apple.svg`}
+                            src={`${imgPath.imagePath}/image/appleheaderBlack.png`}
                             alt="apple-logo"
                         />
                     </Link>
