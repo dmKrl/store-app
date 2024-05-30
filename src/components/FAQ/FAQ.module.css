@@ -20,11 +20,11 @@
     bottom: -150px;
 }
 .FAQDescription::after {
-    right: 140px;
+    right: 110px;
     content: url('/assets/image/airpods2Right.png');
 }
 .FAQDescription::before {
-    left: 180px;
+    left: 150px;
     content: url('/assets/image/airpods2Left.png');
 }
 

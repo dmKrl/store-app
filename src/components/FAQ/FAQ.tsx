@@ -18,8 +18,8 @@ const FAQ = () => {
                 <div className={s.FAQDescription}>
                     <div className={s.FAQDescriptionBlock}>
                         <p>
-                            Потеряли наушник, кейс или кабель? Вы также можете
-                            приобрести их в нашем магазине
+                            Потеряли наушник, кейс <br /> или кабель? Вы также
+                            можете приобрести их в нашем магазине
                         </p>
                         <CatalogButton>Перейти в каталог</CatalogButton>
                     </div>
