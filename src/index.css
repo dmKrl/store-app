@@ -34,6 +34,12 @@
 
 a {
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+a:hover {
+    transition: all 0.3s ease;
+    color: #ffffffb9;
 }
 
 button {

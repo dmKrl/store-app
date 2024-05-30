@@ -1,0 +1,36 @@
+.footer {
+    background: #2c2b29;
+    position: relative;
+    z-index: 1;
+}
+.footerUp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerUp img {
+    width: 37px;
+}
+.footerDown {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.footerDown p {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Lucida Bright';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}
+.footerLink {
+    color: #fff;
+    font-family: 'Lucida Bright';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}
+.footerOfertaText {
+}
