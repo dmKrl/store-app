@@ -3,14 +3,14 @@ import s from './NotFound.module.css';
 
 const NotFound = () => {
     return (
-        <div className={s.NotFound}>
-            <div className={s.NotFoundContent}>
-                <h2 className={s.NotFoundHeading}>404</h2>
-                <p className={s.NotFoundMainText}>
+        <div className={s.notFound}>
+            <div className={s.notFoundContent}>
+                <h2 className={s.notFoundHeading}>404</h2>
+                <p className={s.notFoundMainText}>
                     Страница не найдена. Возможно, вы неверно указали адрес
                     страницы
                 </p>
-                <a className={s.NotFoundLink} href="/">
+                <a className={s.notFoundLink} href="/">
                     Перейти на главную
                 </a>
             </div>
