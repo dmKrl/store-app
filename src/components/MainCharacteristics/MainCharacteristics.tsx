@@ -1,4 +1,4 @@
-import s from './Characteristics.module.css';
+import s from './MainCharacteristics.module.css';
 import '../../App.css';
 
 const Characteristics = () => {

@@ -1,0 +1,40 @@
+.infoProductKit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.infoProductKitHeading {
+    color: #000;
+    font-family: 'Lucida Grande';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+}
+.infoProductKitBlock {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding: 30px 50px;
+    border-radius: 10px;
+    background: #fafafa;
+    box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.06);
+}
+.infoProductKitItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.infoProductKitItem img {
+    max-width: 250px;
+}
+.infoProductKitItem p {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Lucida Grande';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}

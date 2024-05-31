@@ -11,25 +11,25 @@ const CatalogComponent = () => {
                     <CatalogCard
                         cardButtonText="Купить"
                         cardPrice="200"
-                        cardHeading="Наушники AirPods"
+                        cardLink="Наушники AirPods"
                         cardImg="image/airpods1Card.png"
                     />
                     <CatalogCard
                         cardButtonText="Купить"
                         cardPrice="200"
-                        cardHeading="Наушники AirPods"
+                        cardLink="Наушники AirPods"
                         cardImg="image/airpods1Card.png"
                     />
                     <CatalogCard
                         cardButtonText="Купить"
                         cardPrice="200"
-                        cardHeading="Наушники AirPods"
+                        cardLink="Наушники AirPods"
                         cardImg="image/airpods1Card.png"
                     />
                     <CatalogCard
                         cardButtonText="Купить"
                         cardPrice="200"
-                        cardHeading="Наушники AirPods"
+                        cardLink="Наушники AirPods"
                         cardImg="image/airpods1Card.png"
                     />
                 </div>
