@@ -1,0 +1,13 @@
+.instractionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.instractionsList li {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Lucida Grande';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}

@@ -1,0 +1,22 @@
+.instractionsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.instractionsHeading {
+    color: #000;
+    font-family: 'Lucida Grande';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+}
+.instractionsContent {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.instractionsContentDown {
+    display: flex;
+    gap: 20px;
+}

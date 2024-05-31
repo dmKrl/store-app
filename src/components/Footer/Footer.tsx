@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../../App.css';
 import s from './Footer.module.css';
 
@@ -9,18 +10,18 @@ const Footer = () => {
                     <a href="#">
                         <img src="image/apple.svg" alt="apple" />
                     </a>
-                    <a className={s.footerLink} href="#">
+                    <Link className={s.footerLink} to="/">
                         Каталог
-                    </a>
-                    <a className={s.footerLink} href="#">
+                    </Link>
+                    <Link className={s.footerLink} to="/instraction">
                         Инструкции
-                    </a>
-                    <a className={s.footerLink} href="#">
+                    </Link>
+                    <Link className={s.footerLink} to="/pay-delivery">
                         Оплата и доставка
-                    </a>
-                    <a className={s.footerLink} href="#">
+                    </Link>
+                    <Link className={s.footerLink} to="/contacts">
                         Контакты
-                    </a>
+                    </Link>
                 </div>
                 <div className={s.footerDown}>
                     <p>Политика конфиденциальности</p>
