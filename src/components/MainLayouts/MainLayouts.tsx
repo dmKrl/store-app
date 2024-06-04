@@ -1,5 +1,5 @@
 import About from '../About/About';
-import CatalogComponent from '../CatalogComponent/CatalogComponent';
+import CatalogComponent from '../CatalogList/CatalogList';
 import Characteristics from '../MainCharacteristics/MainCharacteristics';
 import FAQ from '../FAQ/FAQ';
 import TopContent from '../TopContent/TopContent';
