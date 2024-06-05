@@ -6,8 +6,7 @@ function App() {
     return (
         <div className="app">
             <div className="wrapper">
-                    <AppRoutes />
-                
+                <AppRoutes />
             </div>
         </div>
     );
