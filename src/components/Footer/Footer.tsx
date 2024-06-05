@@ -10,7 +10,7 @@ const Footer = () => {
                     <a href="#">
                         <img src="image/apple.svg" alt="apple" />
                     </a>
-                    <Link className={s.footerLink} to="/">
+                    <Link className={s.footerLink} to="/catalog">
                         Каталог
                     </Link>
                     <Link className={s.footerLink} to="/instraction">
@@ -21,6 +21,9 @@ const Footer = () => {
                     </Link>
                     <Link className={s.footerLink} to="/contacts">
                         Контакты
+                    </Link>
+                    <Link className={s.footerLink} to="/contacts">
+                        Корзина
                     </Link>
                 </div>
                 <div className={s.footerDown}>

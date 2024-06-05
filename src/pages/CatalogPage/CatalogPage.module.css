@@ -1,0 +1,14 @@
+.catalogPage {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 45px 0px;
+}
+.catalogPageHeading {
+    color: #000;
+    font-family: 'Lucida Grande';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+}

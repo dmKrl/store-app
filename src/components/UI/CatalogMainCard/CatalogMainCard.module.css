@@ -1,0 +1,51 @@
+.catalogMainCard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 275px;
+}
+.catalogMainCard span {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 109.971%;
+}
+.catalogMainCard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 275px;
+}
+.catalogMainCardImg {
+    width: 100%;
+    border-radius: 10px;
+}
+.catalogMainCardHeading {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 109.971%;
+}
+.catalogMainCardPriceBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.catalogMainCardPrice {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 109.971%;
+}
+.catalogMainCardButtonBasket {
+    background: none;
+}
+.catalogMainCardButtonBasket img {
+    max-width: 32px;
+}

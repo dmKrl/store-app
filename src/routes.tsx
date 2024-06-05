@@ -6,6 +6,7 @@ import PayDelivery from './pages/PayDeliveryPage/PayDelivery';
 import ContactsPage from './pages/ContactsPage/ContactsPage';
 import InfoProductPage from './pages/InfoProductPage/InfoProductPage';
 import InstractionsPage from './pages/InstractionsPage/InstractionsPage';
+import CatalogPage from './pages/CatalogPage/CatalogPage';
 
 const AppRoutes = () => {
     return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
                 <Route path="/contacts" element={<ContactsPage />} />
                 <Route path="/product" element={<InfoProductPage />} />
                 <Route path="/instraction" element={<InstractionsPage />} />
+                <Route path="/catalog" element={<CatalogPage />} />
             </Route>
         </Routes>
     );
