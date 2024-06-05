@@ -8,7 +8,7 @@ const NavBar = () => {
             <Link to="/instraction">Инструкция</Link>
             <Link to="/pay-delivery">Доставка и оплата</Link>
             <Link to="/contacts">Контакты</Link>
-            <Link to="/contacts">Корзина</Link>
+            <Link to="/basket">Корзина</Link>
         </nav>
     );
 };

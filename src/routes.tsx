@@ -7,6 +7,7 @@ import ContactsPage from './pages/ContactsPage/ContactsPage';
 import InfoProductPage from './pages/InfoProductPage/InfoProductPage';
 import InstractionsPage from './pages/InstractionsPage/InstractionsPage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
+import BasketPage from './pages/BasketPage/BasketPage';
 
 const AppRoutes = () => {
     return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
                 <Route path="/product" element={<InfoProductPage />} />
                 <Route path="/instraction" element={<InstractionsPage />} />
                 <Route path="/catalog" element={<CatalogPage />} />
+                <Route path="/basket" element={<BasketPage />} />
             </Route>
         </Routes>
     );

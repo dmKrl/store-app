@@ -1,0 +1,16 @@
+[
+    {
+        "nameItem": "Наушники AirPods Max",
+        "priceItem": "62 990.00 ₽",
+        "quantityItem": 1,
+        "imgItem": "image/basketItem.png",
+        "id": 1
+    },
+    {
+        "nameItem": "Правый наушник Apple AirPods Pro (2nd generation)",
+        "priceItem": "10 490.00 ₽",
+        "quantityItem": 1,
+        "imgItem": "image/basketItem.png",
+        "id": 2
+    }
+]

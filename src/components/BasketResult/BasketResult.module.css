@@ -1,0 +1,24 @@
+.basketResult {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.basketResultText {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 109.971%;
+}
+.basketResultText span {
+    color: #000;
+    font-family: 'Lucida Grande';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}
