@@ -1,0 +1,80 @@
+.top {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+}
+.topLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 100px;
+}
+.topDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.topRight {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 30px;
+    position: relative;
+}
+.topRight img {
+    position: absolute;
+    right: 0;
+    top: -20px;
+}
+.topRightText {
+    color: #bcbbc0;
+    font-family: 'Lucida Grande';
+    font-size: 160px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-right: 150px;
+}
+.topHeading {
+    color: #fff;
+    font-family: 'Lucida Grande';
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%;
+    max-width: 472px;
+}
+.topText {
+    color: #fff;
+    font-family: 'Lucida Grande';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+.topBlockPrice {
+    display: flex;
+    gap: 20px;
+}
+.topPrice {
+    color: #fff;
+    font-family: 'Lucida Grande';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+}
+.topListBlock {
+}
+.topList {
+    display: flex;
+    gap: 60px;
+}
+.topList li {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Lucida Grande';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    max-width: 170px;
+}

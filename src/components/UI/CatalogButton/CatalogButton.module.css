@@ -1,0 +1,29 @@
+.catalogButton {
+    display: flex;
+    padding: 10px 55px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: linear-gradient(261deg, #715e5f 0%, #5f4f50 98.34%);
+    box-shadow:
+        -1px -1px 4px 0px rgba(0, 0, 0, 0.25) inset,
+        -7px -7px 20px 0px rgba(255, 255, 255, 0.2),
+        7px 7px 20px 0px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 109.971%;
+    transition: all 0.5s ease;
+}
+
+.catalogButton:hover {
+    transition: all 0.5s ease;
+    background: linear-gradient(261deg, #715e5f7a 0%, #5f4f50dd 98.34%);
+    box-shadow:
+        -1px -1px 4px 0px rgba(0, 0, 0, 0.535) inset,
+        -7px -7px 20px 0px rgba(255, 255, 255, 0.507),
+        7px 7px 20px 0px rgba(0, 0, 0, 0.486);
+}

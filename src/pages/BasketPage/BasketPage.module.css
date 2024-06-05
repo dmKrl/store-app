@@ -1,0 +1,26 @@
+.basketPage {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    padding: 45px 0px;
+}
+.basketPageHeading {
+    color: #000;
+    font-family: 'Lucida Grande';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+}
+.basketPageContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.basketPageItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

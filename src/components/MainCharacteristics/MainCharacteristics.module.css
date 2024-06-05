@@ -1,0 +1,80 @@
+.characteristicsWrapper {
+    min-height: 942px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.characteristicsUp {
+    max-width: 100%;
+    background: linear-gradient(239deg, #53514d 5.26%, #2b2a28 45.29%);
+}
+.characteristicsUpBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    min-height: 650px;
+    padding-top: 70px;
+}
+
+.characteristicsHeading {
+    color: #f5d7a9;
+    font-family: 'Lucida Grande';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    max-width: 556px;
+}
+.characteristicsMainText {
+    color: #fff;
+    font-family: 'Lucida Grande';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    max-width: 640px;
+}
+.characteristicsList {
+    display: flex;
+    gap: 175px;
+}
+.characteristicsList li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #f5d7a9;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 109.971%;
+    max-width: 227px;
+}
+.characteristicsList li:last-child {
+    max-width: 286px;
+}
+.characteristicsList li span {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Lucida Grande';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}
+.characteristicsDown {
+    max-width: 100%;
+    background: radial-gradient(
+        1304.35% 116.07% at 50% 42.8%,
+        #b5b4b6 0%,
+        #c0bfc3 100%
+    );
+    /* filter: blur(5px); */
+    min-height: 292px;
+    max-height: 292px;
+    position: relative;
+}
+.characteristicsDown img {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+}

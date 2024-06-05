@@ -1,0 +1,17 @@
+.basketDescription {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.basketDescriptionBlock {
+    display: flex;
+    gap: 110px;
+}
+.basketDescription p {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 109.971%;
+}

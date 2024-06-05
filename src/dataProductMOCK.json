@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "numGen": "",
+        "nameProduct": "Наушники AirPods Max",
+        "priceProduct": "62 990.00 ₽",
+        "imgProduct": "image/productAirPodsMax.jpg"
+    },
+    {
+        "id": 2,
+        "numGen": "",
+        "nameProduct": "Наушники AirPods Pro",
+        "priceProduct": "24 990.00 ₽",
+        "imgProduct": "image/productAirpods2Card.png"
+    },
+    {
+        "id": 3,
+        "numGen": "3rd generation",
+        "nameProduct": "Наушники AirPods",
+        "priceProduct": "15 990.00 ₽",
+        "imgProduct": "image/productAirpods3Card.png"
+    },
+    {
+        "id": 4,
+        "numGen": "3rd generation",
+        "nameProduct": "Левый наушник Apple AirPods Pro",
+        "priceProduct": "8 490.00 ₽",
+        "imgProduct": "image/productLeftAirPodsPro3.png"
+    },
+    {
+        "id": 5,
+        "numGen": "3rd generation",
+        "nameProduct": "Правый наушник Apple AirPods Pro",
+        "priceProduct": "8 490.00 ₽",
+        "imgProduct": "image/productRightAirPodsPro3.png"
+    },
+    {
+        "id": 6,
+        "numGen": "2rd generation",
+        "nameProduct": "Левый наушник Apple AirPods Pro",
+        "priceProduct": "8 490.00 ₽",
+        "imgProduct": "image/productLeftAirPodsPro2.png"
+    },
+    {
+        "id": 7,
+        "numGen": "2rd generation",
+        "nameProduct": "Правый наушник Apple AirPods Pro",
+        "priceProduct": "8 490.00 ₽",
+        "imgProduct": "image/productRightAirPodsPro2.png"
+    },
+    {
+        "id": 8,
+        "numGen": "2rd generation",
+        "nameProduct": "Наушники AirPods",
+        "priceProduct": "11 990.00 руб.",
+        "imgProduct": "image/productAirPods2.png"
+    },
+    {
+        "id": 9,
+        "numGen": "2rd generation",
+        "nameProduct": "Зарядный футляр Apple MagSafe для AirPods Pro",
+        "priceProduct": "8 490.00 ₽",
+        "imgProduct": "image/productCaseAirPods2.png"
+    },
+    {
+        "id": 10,
+        "numGen": "3rd generation",
+        "nameProduct": "Зарядный футляр Apple MagSafe Lightning для AirPods Pro",
+        "priceProduct": "8 490.00 руб.",
+        "imgProduct": "image/productAirpods3Card.png"
+    }
+]

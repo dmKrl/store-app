@@ -1,0 +1,51 @@
+.about {
+    background: linear-gradient(80deg, #715e5f 9.85%, #5f4f50 83.43%);
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+.aboutAirpodsFront,
+.aboutLine {
+    position: absolute;
+}
+.aboutAirpodsFront {
+    left: 0;
+    top: -130px;
+}
+.aboutLine {
+    left: 330px;
+    bottom: 65%;
+}
+.aboutContent {
+    display: flex;
+    justify-content: flex-end;
+    gap: 100px;
+    padding: 70px 0px;
+}
+.aboutLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 373px;
+}
+.aboutRight {
+}
+.aboutRight img {
+}
+.aboutHeading,
+.aboutMainText {
+    color: #fff;
+    font-style: normal;
+    line-height: 110%;
+}
+.aboutHeading {
+    font-family: 'Lucida Grande';
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+.aboutMainText {
+    font-family: 'Lucida Grande';
+    font-size: 20px;
+    font-weight: 400;
+}
