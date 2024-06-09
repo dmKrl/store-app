@@ -7,25 +7,27 @@ import s from './BasketPage.module.css';
 
 const BasketPage = () => {
     return (
-        <div className="container">
-            <div className={s.basketPage}>
-                <h2 className={s.basketPageHeading}>Корзина</h2>
-                <div className={s.basketPageContent}>
-                    <BasketDescription />
-                    <div className={s.basketPageItems}>
-                        {dataBasketItems.map((item) => {
-                            return (
-                                <BasketItem
-                                    key={item.id}
-                                    nameItem={item.nameItem}
-                                    priceItem={item.priceItem}
-                                    quantityItem={item.quantityItem}
-                                    imgItem={item.imgItem}
-                                />
-                            );
-                        })}
+        <div className={s.basketPageContainer}>
+            <div className="container">
+                <div className={s.basketPage}>
+                    <h2 className={s.basketPageHeading}>Корзина</h2>
+                    <div className={s.basketPageContent}>
+                        <BasketDescription />
+                        <div className={s.basketPageItems}>
+                            {dataBasketItems.map((item) => {
+                                return (
+                                    <BasketItem
+                                        key={item.id}
+                                        nameItem={item.nameItem}
+                                        priceItem={item.priceItem}
+                                        quantityItem={item.quantityItem}
+                                        imgItem={item.imgItem}
+                                    />
+                                );
+                            })}
+                        </div>
+                        <BasketResult />
                     </div>
-                    <BasketResult />
                 </div>
             </div>
         </div>

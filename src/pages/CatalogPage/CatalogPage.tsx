@@ -4,10 +4,12 @@ import '../../App.css';
 
 const CatalogPage = () => {
     return (
-        <div className="container">
-            <div className={s.catalogPage}>
-                <h2 className={s.catalogPageHeading}>Каталог</h2>
-                <CatalogMain />
+        <div className={s.catalogPageContainer}>
+            <div className="container">
+                <div className={s.catalogPage}>
+                    <h2 className={s.catalogPageHeading}>Каталог</h2>
+                    <CatalogMain />
+                </div>
             </div>
         </div>
     );
