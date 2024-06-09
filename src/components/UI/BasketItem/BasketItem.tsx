@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import s from './BasketItem.module.css';
 
 interface BasketItemProps {
@@ -14,6 +14,16 @@ const BasketItem: FC<BasketItemProps> = ({
     quantityItem,
     imgItem,
 }) => {
+    const [counter, setCounter] = useState<number>(quantityItem);
+
+    function handlerCounterPlus(): void {
+        counter > 0 ? setCounter(counter + 1) : null;
+    }
+    
+    function handlerCounterMinus(): void {
+        counter > 0 ? setCounter(counter - 1) : null;
+    }
+
     return (
         <div className={s.basketItem}>
             <div className={s.basketItemDescription}>
@@ -26,9 +36,13 @@ const BasketItem: FC<BasketItemProps> = ({
             </div>
             <p className={s.basketItemMainText}>{priceItem}</p>
             <div className={s.basketItemQuantityBlock}>
-                <input type="button" value="-" />
-                <label htmlFor="">{quantityItem}</label>
-                <input type="button" value="+" />
+                <button type="button" onClick={handlerCounterMinus}>
+                    <img src="image/minus.svg" alt="minus-button" />
+                </button>
+                <label htmlFor="">{counter}</label>
+                <button type="button" onClick={handlerCounterPlus}>
+                    <img src="image/plus.svg" alt="plus-button" />
+                </button>
             </div>
             <p className={s.basketItemMainText}>62 990.00 ₽</p>
         </div>

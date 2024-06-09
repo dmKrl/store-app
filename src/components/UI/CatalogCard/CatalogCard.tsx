@@ -16,7 +16,6 @@ const CatalogCard: FC<CatalogCardProps> = ({
     cardPrice,
     cardButtonText,
 }) => {
-    console.log(cardLink);
     return (
         <div className={s.catalogCardBlock}>
             <div className={s.catalogCardContent}>
