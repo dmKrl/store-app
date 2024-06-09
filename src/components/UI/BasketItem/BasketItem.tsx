@@ -17,11 +17,14 @@ const BasketItem: FC<BasketItemProps> = ({
     const [counter, setCounter] = useState<number>(quantityItem);
 
     function handlerCounterPlus(): void {
-        counter > 0 ? setCounter(counter + 1) : null;
+        setCounter(counter + 1);
     }
-    
+
     function handlerCounterMinus(): void {
-        counter > 0 ? setCounter(counter - 1) : null;
+        if (counter <= 0) {
+            return;
+        }
+        setCounter(counter - 1);
     }
 
     return (

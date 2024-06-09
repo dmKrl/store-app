@@ -22,7 +22,10 @@
 .instractionsContent {
     display: flex;
     align-items: center;
-    gap: 40px;
+    justify-content: center;
+}
+.instractionsContent img {
+    padding-left: 20px;
 }
 .instractionsContentDown {
     display: flex;
