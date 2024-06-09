@@ -20,6 +20,16 @@
     font-weight: 700;
     line-height: 110%;
 }
+.basketPageInfoText {
+    color: #000;
+    font-family: 'Lucida Grande';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.511);
+    padding-bottom: 20px;
+}
 .basketPageContent {
     display: flex;
     flex-direction: column;
@@ -29,5 +39,5 @@
 .basketPageItems {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }

@@ -5,7 +5,9 @@
 }
 .basketDescriptionBlock {
     display: flex;
-    gap: 110px;
+    justify-content: flex-end;
+    gap: 260px;
+    width: 100%;
 }
 .basketDescription p {
     color: #000;
@@ -14,4 +16,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: 109.971%;
+}
+.basketDescriptionBlockRight {
+    display: flex;
+    gap: 94px;
 }

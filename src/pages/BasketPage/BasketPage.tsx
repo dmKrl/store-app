@@ -13,20 +13,28 @@ const BasketPage = () => {
                     <h2 className={s.basketPageHeading}>Корзина</h2>
                     <div className={s.basketPageContent}>
                         <BasketDescription />
-                        <div className={s.basketPageItems}>
-                            {dataBasketItems.map((item) => {
-                                return (
-                                    <BasketItem
-                                        key={item.id}
-                                        nameItem={item.nameItem}
-                                        priceItem={item.priceItem}
-                                        quantityItem={item.quantityItem}
-                                        imgItem={item.imgItem}
-                                    />
-                                );
-                            })}
-                        </div>
-                        <BasketResult />
+                        {dataBasketItems.length ? (
+                            <>
+                                <div className={s.basketPageItems}>
+                                    {dataBasketItems.map((item) => {
+                                        return (
+                                            <BasketItem
+                                                key={item.id}
+                                                nameItem={item.nameItem}
+                                                priceItem={item.priceItem}
+                                                quantityItem={item.quantityItem}
+                                                imgItem={item.imgItem}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                                <BasketResult />
+                            </>
+                        ) : (
+                            <p className={s.basketPageInfoText}>
+                                Корзина пуста
+                            </p>
+                        )}
                     </div>
                 </div>
             </div>

@@ -15,12 +15,14 @@
 .catalogMainCard {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
     max-width: 275px;
 }
 .catalogMainCardImg {
     width: 100%;
     border-radius: 10px;
+    min-height: 260px;
 }
 .catalogMainCardHeading {
     color: #000;

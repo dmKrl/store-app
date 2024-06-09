@@ -16,10 +16,14 @@ const BasketItem: FC<BasketItemProps> = ({
 }) => {
     return (
         <div className={s.basketItem}>
-            <img src={imgItem} alt="product-airPods" />
-            <p className={`${s.basketItemMainText} ${s.basketItemNameItem}`}>
-                {nameItem}
-            </p>
+            <div className={s.basketItemDescription}>
+                <img src={imgItem} alt="product-airPods" />
+                <p
+                    className={`${s.basketItemMainText} ${s.basketItemNameItem}`}
+                >
+                    {nameItem}
+                </p>
+            </div>
             <p className={s.basketItemMainText}>{priceItem}</p>
             <div className={s.basketItemQuantityBlock}>
                 <input type="button" value="-" />
