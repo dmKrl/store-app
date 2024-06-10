@@ -1,3 +1,11 @@
+.instractionsContainer {
+    padding: 70px 0px;
+    background: radial-gradient(
+        2406.89% 286.92% at 308.68% 294.26%,
+        #e0e0e0 0%,
+        #acacad 100%
+    );
+}
 .instractionsWrapper {
     display: flex;
     flex-direction: column;
@@ -14,7 +22,10 @@
 .instractionsContent {
     display: flex;
     align-items: center;
-    gap: 40px;
+    justify-content: center;
+}
+.instractionsContent img {
+    padding-left: 20px;
 }
 .instractionsContentDown {
     display: flex;

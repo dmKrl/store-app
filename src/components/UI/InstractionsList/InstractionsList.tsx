@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import s from './Instractions.module.css';
+import s from './InstractionsList.module.css';
 
 interface InstractionsListProps {
     firstListItem: string;

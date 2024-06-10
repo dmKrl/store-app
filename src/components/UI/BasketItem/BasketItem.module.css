@@ -3,10 +3,15 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 20px;
 }
 .basketItem img {
+}
+.basketItemDescription {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 .basketItemMainText {
     color: #000;
@@ -17,6 +22,7 @@
     line-height: 110%;
 }
 .basketItemNameItem {
+    min-width: 275px;
     max-width: 275px;
 }
 .basketItemQuantityBlock {
@@ -26,4 +32,14 @@
     justify-content: space-between;
     align-items: center;
     border: 0.5px solid #000;
+}
+.basketItemQuantityBlock button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    font-size: 30px;
+    font-weight: 400;
+    background: none;
 }

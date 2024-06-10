@@ -5,6 +5,13 @@
     width: 100%;
     padding: 45px 0px;
 }
+.basketPageContainer {
+    background: radial-gradient(
+        2406.89% 286.92% at 308.68% 294.26%,
+        #e0e0e0 0%,
+        #acacad 100%
+    );
+}
 .basketPageHeading {
     color: #000;
     font-family: 'Lucida Grande';
@@ -12,6 +19,16 @@
     font-style: normal;
     font-weight: 700;
     line-height: 110%;
+}
+.basketPageInfoText {
+    color: #000;
+    font-family: 'Lucida Grande';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.511);
+    padding-bottom: 20px;
 }
 .basketPageContent {
     display: flex;
@@ -22,5 +39,5 @@
 .basketPageItems {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
