@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Store App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Full-stack веб-приложение интернет магазина техники Apple.
 
-Currently, two official plugins are available:
+### Пет-проект разработанный в рамках изучения технологии Node.js, PostgreSQL, TypeScript\*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Описание работы проекта:
 
-## Expanding the ESLint configuration
+## Технологический стек:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+TypeScript  
+React  
+Vite  
+ZUSTAND  
+React-router-dom  
+REST API  
+Node.js  
+PostgreSQL  
+Express
 
-- Configure the top-level `parserOptions` property like this:
+## Установка и запуск проекта:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Необходимо клонировать репозиторий: git repo clone dm_krl/store-app  
+Установить зависимости в директориях server/client: npm install;  
+Запустить клиентскую часть в директории client: npm run start;  
+Запустить серверную часть часть в директории server: npm run dev;  
+Откройте http://localhost:3000, чтобы просмотреть приложение.
