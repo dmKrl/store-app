@@ -10,6 +10,7 @@ class DeviceController {
     const devices = await Device.findAll();
     return res.json(devices);
   }
+  async getDeviceOnId() {}
 }
 
 module.exports = new DeviceController();
