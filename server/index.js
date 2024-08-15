@@ -4,14 +4,18 @@ const sequelize = require('./db');
 const router = require('./routes/index');
 const models = require('./models/models');
 const errorHandler = require('./middleware/ErrorHandlingMiddleware');
-// const cors = require('cors');
+const fileUpload = require('express-fileupload');
+const path = require('path');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
+app.use(express.static(path.resolve(__dirname, 'static')));
+app.use(fileUpload());
 app.use('/api', router);
 
 app.use(errorHandler);

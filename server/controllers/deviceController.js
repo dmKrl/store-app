@@ -1,5 +1,4 @@
 const { Device } = require('../models/models');
-import { type } from './../node_modules/agent-base/src/index';
 const { DeviceInfo } = require('../models/models');
 const ApiError = require('../error/ApiError');
 const uuid = require('uuid');
@@ -8,9 +7,10 @@ const path = require('path');
 class DeviceController {
   async create(req, res, next) {
     try {
-      const { name, price, typeId, info } = req.body;
+      let { name, price, typeId, info } = req.body;
+      console.log(req.files)
       const { img } = req.files;
-      let fileName = uuid.v4() + 'jpg';
+      let fileName = uuid.v4() + '.jpg';
       img.mv(path.resolve(__dirname, '..', 'static', fileName));
       const device = await Device.create({
         name,
