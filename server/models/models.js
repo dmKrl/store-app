@@ -5,6 +5,7 @@ const User = sequelize.define('user', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   email: { type: DataTypes.STRING, unique: true },
   password: { type: DataTypes.STRING },
+  username: { type: DataTypes.STRING, unique: true, allowNull: false },
   role: { type: DataTypes.STRING, defaultValue: 'User' },
 });
 
@@ -60,7 +61,7 @@ Device.hasMany(BasketDevice);
 BasketDevice.belongsTo(Device);
 
 Device.hasMany(DeviceInfo);
-DeviceInfo.belongsTo(Device)
+DeviceInfo.belongsTo(Device);
 
 module.exports = {
   User,
