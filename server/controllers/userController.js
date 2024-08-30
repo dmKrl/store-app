@@ -11,18 +11,26 @@ function generateJwt(id, email, role) {
 
 class UserController {
   async registration(req, res, next) {
-    const { email, password, role } = req.body;
+    const { email, password, username, role } = req.body;
     if (!email || !password) {
       return next(ApiError.badRequest('Некорректный адрес или пароль'));
     }
     const candidate = await User.findOne({ where: { email } });
-    if (candidate) {
+    const candidateUsername = await User.findOne({ where: { username } });
+    if (candidate || candidateUsername) {
       return next(
-        ApiError.badRequest('Пользователь с таким email уже существует')
+        ApiError.badRequest(
+          'Пользователь с таким email или username уже существует'
+        )
       );
     }
     const hashPassword = await bcrypt.hash(password, 5);
-    const user = await User.create({ email, role, password: hashPassword });
+    const user = await User.create({
+      email,
+      role,
+      username,
+      password: hashPassword,
+    });
     const basket = await Basket.create({ userId: user.id });
     const token = generateJwt(user.id, user.email, user.role);
     return res.json({ token });
