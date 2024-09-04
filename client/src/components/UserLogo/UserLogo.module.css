@@ -1,5 +1,14 @@
 .userLogo {
     display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.userLogo a {
+    color: black;
+    gap: 10px;
+}
+.userLogo a:hover {
+    color: rgb(255, 255, 255);
     gap: 10px;
 }
 .userLogoImg {
