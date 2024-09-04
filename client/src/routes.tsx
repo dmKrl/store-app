@@ -9,14 +9,10 @@ import InstractionsPage from './pages/InstractionsPage/InstractionsPage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
 import BasketPage from './pages/BasketPage/BasketPage';
 // import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
-import AuthPage from './pages/AuthPage/AuthPage';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="/auth" element={<AuthPage />} />
-            <Route path="/register" element={<RegisterPage />} />
             {/* <Route element={<ProtectedRoute />}> */}
             <Route path="/" element={<MainPage />}>
                 <Route path="/" element={<MainLayouts />} />

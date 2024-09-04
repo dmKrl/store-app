@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 const registrationUrl = 'http://localhost:5000/api/user/registration';
 const authorizationUrl = 'http://localhost:5000/api/user/login';
@@ -24,69 +25,81 @@ interface Users {
 }
 
 export const useUsersStore = create<Users>()(
-    immer((set) => ({
-        usernameState: '',
-        isLoading: false,
-        setUsernameState: (): void => {
-            set({ usernameState: '' });
-        },
-        authUser: async (email: string, password: string) => {
-            const response = await fetch(authorizationUrl, {
-                method: 'POST',
-                body: JSON.stringify({
-                    email,
-                    password,
-                }),
-                headers: {
-                    'content-type': 'application/json',
+    persist(
+        devtools(
+            immer((set) => ({
+                usernameState: '',
+                isLoading: false,
+                setUsernameState: (): void => {
+                    set({ usernameState: '' });
                 },
-            });
-            set({ isLoading: true });
-            const responseData = (await response.json()) as User;
-            localStorage.setItem('access_token', responseData.token); // Посмотреть как поменять LS на Cookie
-            set({ usernameState: responseData.username, isLoading: false });
-        },
-        registrationUser: async (
-            email: string,
-            password: string,
-            username: string,
-        ) => {
-            const response = await fetch(registrationUrl, {
-                method: 'POST',
-                body: JSON.stringify({
-                    email,
-                    password,
-                    username,
-                }),
-                headers: {
-                    'content-type': 'application/json',
+                authUser: async (email: string, password: string) => {
+                    const response = await fetch(authorizationUrl, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            email,
+                            password,
+                        }),
+                        headers: {
+                            'content-type': 'application/json',
+                        },
+                    });
+                    set({ isLoading: true });
+                    const responseData = (await response.json()) as User;
+                    localStorage.setItem('access_token', responseData.token); // Посмотреть как поменять LS на Cookie
+                    set({
+                        usernameState: responseData.username,
+                        isLoading: false,
+                    });
                 },
-            });
-            set({ isLoading: true });
-            const responseData = (await response.json()) as User;
-            set({ usernameState: responseData.username, isLoading: false });
-        },
-        checkUser: async () => {
-            try {
-                const accessToken = localStorage.getItem('access_token');
-                const response = await fetch(checkUserUrl, {
-                    method: 'GET',
-                    headers: {
-                        Authorization: `Bearer ${accessToken}`,
-                    },
-                });
-                const responseData = (await response.json()) as User;
-                if (!responseData.token) {
-                    throw new Error();
-                }
-                return responseData.token;
-            } catch (error: unknown) {
-                if (error instanceof Error) {
-                    return error.message;
-                } else {
-                    return 'Произошла неизвестная ошибка';
-                }
-            }
-        },
-    })),
+                registrationUser: async (
+                    email: string,
+                    password: string,
+                    username: string,
+                ) => {
+                    const response = await fetch(registrationUrl, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            email,
+                            password,
+                            username,
+                        }),
+                        headers: {
+                            'content-type': 'application/json',
+                        },
+                    });
+                    set({ isLoading: true });
+                    const responseData = (await response.json()) as User;
+                    set({
+                        usernameState: responseData.username,
+                        isLoading: false,
+                    });
+                },
+                checkUser: async () => {
+                    try {
+                        const accessToken =
+                            localStorage.getItem('access_token');
+                        const response = await fetch(checkUserUrl, {
+                            method: 'GET',
+                            headers: {
+                                Authorization: `Bearer ${accessToken}`,
+                            },
+                        });
+                        const responseData = (await response.json()) as User;
+                        if (!responseData.token) {
+                            throw new Error();
+                        }
+                        return responseData.token;
+                    } catch (error: unknown) {
+                        if (error instanceof Error) {
+                            return error.message;
+                        } else {
+                            return 'Произошла неизвестная ошибка';
+                        }
+                    }
+                },
+            })),
+        ),
+        { name: 'usersStore', version: 1 },
+    ),
 );
