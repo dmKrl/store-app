@@ -5,11 +5,11 @@ import { useUsersStore } from '../../store/UsersStore';
 const NavBar = () => {
     const { checkUser } = useUsersStore();
 
-    function checkAuthUser(): void {
+    const checkAuthUser = (): void => {
         checkUser().then((response) => {
             console.log(response);
         });
-    }
+    };
 
     return (
         <nav className={s.navbar}>
