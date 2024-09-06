@@ -1,8 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../App.css';
 import s from './Footer.module.css';
+import { useUsersStore } from '../../store/UsersStore';
+import { useModalStore } from '../../store/ModalStore';
 
 const Footer = () => {
+    const { checkUser } = useUsersStore();
+    const { setIsVisibleModalAuth } = useModalStore();
+    const navigate = useNavigate();
+
+    const checkAuthUser = (): void => {
+        checkUser().then((response): void => {
+            if (response.status) {
+                return setIsVisibleModalAuth();
+            }
+            return navigate('/basket');
+        });
+    };
     return (
         <div className={s.footer}>
             <div className="container">
@@ -22,7 +36,14 @@ const Footer = () => {
                     <Link className={s.footerLink} to="/contacts">
                         Контакты
                     </Link>
-                    <Link className={s.footerLink} to="/basket">
+                    <Link
+                        className={s.footerLink}
+                        to=""
+                        onClick={(event) => {
+                            event.preventDefault();
+                            checkAuthUser();
+                        }}
+                    >
                         Корзина
                     </Link>
                 </div>

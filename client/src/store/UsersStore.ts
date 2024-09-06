@@ -9,6 +9,11 @@ type User = {
     token: string;
     username: string;
 };
+type UserToken = {
+    token: string;
+    status: number;
+    message: string;
+};
 
 interface Users {
     usernameState: string;
@@ -21,7 +26,7 @@ interface Users {
         username: string,
     ) => void;
     setUsernameState: () => void;
-    checkUser: () => Promise<string>;
+    checkUser: () => Promise<UserToken>;
 }
 
 export const useUsersStore = create<Users>()(
@@ -76,27 +81,16 @@ export const useUsersStore = create<Users>()(
                     });
                 },
                 checkUser: async () => {
-                    try {
-                        const accessToken =
-                            localStorage.getItem('access_token');
-                        const response = await fetch(checkUserUrl, {
-                            method: 'GET',
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`,
-                            },
-                        });
-                        const responseData = (await response.json()) as User;
-                        if (!responseData.token) {
-                            throw new Error();
-                        }
-                        return responseData.token;
-                    } catch (error: unknown) {
-                        if (error instanceof Error) {
-                            return error.message;
-                        } else {
-                            return 'Произошла неизвестная ошибка';
-                        }
-                    }
+                    const accessToken = localStorage.getItem('access_token');
+                    const response = await fetch(checkUserUrl, {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`,
+                        },
+                    });
+                    const responseData = (await response.json()) as UserToken;
+
+                    return responseData;
                 },
             })),
         ),

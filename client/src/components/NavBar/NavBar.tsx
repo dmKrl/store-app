@@ -1,13 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import s from './NavBar.module.css';
 import { useUsersStore } from '../../store/UsersStore';
+import { useModalStore } from '../../store/ModalStore';
 
 const NavBar = () => {
     const { checkUser } = useUsersStore();
+    const { setIsVisibleModalAuth } = useModalStore();
+    const navigate = useNavigate();
 
     const checkAuthUser = (): void => {
-        checkUser().then((response) => {
-            console.log(response);
+        checkUser().then((response): void => {
+            if (response.status) {
+                return setIsVisibleModalAuth();
+            }
+            return navigate('/basket');
         });
     };
 

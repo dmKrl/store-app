@@ -28,13 +28,13 @@ export const useModalStore = create<Modals>()(
                         state.isVisibleModalRegistration =
                             !state.isVisibleModalRegistration;
                     }),
-                switchVisibleModals: () =>
+                switchVisibleModals: (): void =>
                     set((state) => {
                         state.isVisibleModalAuth = !state.isVisibleModalAuth;
                         state.isVisibleModalRegistration =
                             !state.isVisibleModalRegistration;
                     }),
-                closeVisibleModals: () =>
+                closeVisibleModals: (): void =>
                     set((state) => {
                         state.isVisibleModalAuth = false;
                         state.isVisibleModalRegistration = false;
