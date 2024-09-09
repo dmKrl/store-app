@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-// import { authorizationUser } from '../../api/api';
 import '../../App.css';
 import s from './AuthPage.module.css';
 import ValidateError from '../../components/UI/ValidateError/ValidateError';
@@ -16,8 +14,8 @@ type Data = {
 const AuthPage = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const navigate = useNavigate();
-    const { authUser, isLoading } = useUsersStore();
+    const [responseError, setResponseError] = useState<string>('');
+    const { authUser, isLoading, setIsLoading } = useUsersStore();
     const { switchVisibleModals, closeVisibleModals } = useModalStore();
 
     const {
@@ -29,10 +27,23 @@ const AuthPage = () => {
 
     const onSubmit = (data: Data) => {
         reset();
-        authUser(data.email, data.password);
-        navigate('/');
-        //Начинаем с этого места: нужно сделать правильную последовательность
-        //выполнения функций авторизации и навигации на основную страницу сайта
+        setIsLoading();
+        authUser(data.email, data.password)
+            .then((response) => {
+                if (response.message) {
+                    throw new Error(response.message);
+                }
+                setIsLoading();
+                closeVisibleModals();
+                setResponseError('');
+            })
+            .catch((error: unknown) => {
+                if (error instanceof Error) {
+                    setIsLoading();
+                    return setResponseError(error.message);
+                }
+                return setResponseError('Непредвиденная ошибка');
+            });
     };
 
     return (
@@ -85,7 +96,14 @@ const AuthPage = () => {
                                 errorsMessage={errors?.password?.message}
                             />
                         )}
-                        <button className={s.formSubmitButton} type="submit">
+                        {responseError && (
+                            <ValidateError errorsMessage={responseError} />
+                        )}
+                        <button
+                            className={`${s.formSubmitButton} ${isLoading && s.formSubmitButtonDisabled}`}
+                            type="submit"
+                            disabled={isLoading}
+                        >
                             {isLoading ? (
                                 <span>Загрузка...</span>
                             ) : (

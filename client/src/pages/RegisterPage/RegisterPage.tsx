@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { registrationUser } from '../../api/api';
 import s from '../AuthPage/AuthPage.module.css';
 import ValidateError from '../../components/UI/ValidateError/ValidateError';
 import { useModalStore } from '../../store/ModalStore';
+import { useUsersStore } from '../../store/UsersStore';
 
 type Data = {
     email: string;
@@ -17,8 +17,9 @@ const RegisterPage = () => {
     const [password, setPassword] = useState<string>('');
     const [repeatPassword, setRepeatPassword] = useState<string>('');
     const [username, setUsername] = useState<string>('');
-    const [isGettingData, setIsGettingData] = useState<boolean>(false);
+    const [validatePassword, setValidatePassword] = useState<boolean>(false);
     const { switchVisibleModals, closeVisibleModals } = useModalStore();
+    const { isLoading, setIsLoading, registrationUser } = useUsersStore();
 
     const {
         register,
@@ -29,18 +30,18 @@ const RegisterPage = () => {
 
     const onSubmit = (data: Data) => {
         if (password !== repeatPassword) {
-            return [];
+            return setValidatePassword(true);
         }
-        setIsGettingData(true);
-        console.log(data);
         reset();
-        return registrationUser(data.email, data.password, data.username)
-            .then((response) => {
-                console.log(response);
+        setIsLoading();
+        registrationUser(data.email, data.password, data.username)
+            .then(() => {
+                setIsLoading();
+                closeVisibleModals();
+                setValidatePassword(false);
             })
-            .catch((e) => console.log(e))
-            .finally(() => {
-                setIsGettingData(false);
+            .catch(() => {
+                setIsLoading();
             });
     };
 
@@ -127,8 +128,16 @@ const RegisterPage = () => {
                                 errorsMessage={errors?.username?.message}
                             />
                         )}
-                        <button className={s.formSubmitButton} type="submit">
-                            {isGettingData ? (
+                        {validatePassword && (
+                            <ValidateError
+                                errorsMessage={'Пароли не совпадают'}
+                            />
+                        )}
+                        <button
+                            className={`${s.formSubmitButton} ${isLoading && s.formSubmitButtonDisabled}`}
+                            type="submit"
+                        >
+                            {isLoading ? (
                                 <span>Загрузка...</span>
                             ) : (
                                 <span>Зарегистрироваться</span>

@@ -8,6 +8,7 @@ const checkUserUrl = 'http://localhost:5000/api/user/auth';
 type User = {
     token: string;
     username: string;
+    message: string;
 };
 type UserToken = {
     token: string;
@@ -19,13 +20,14 @@ interface Users {
     usernameState: string;
     isLoading: boolean;
 
-    authUser: (email: string, password: string) => void;
+    authUser: (email: string, password: string) => Promise<User>;
     registrationUser: (
         email: string,
         password: string,
         username: string,
-    ) => void;
+    ) => Promise<User>;
     setUsernameState: () => void;
+    setIsLoading: () => void;
     checkUser: () => Promise<UserToken>;
 }
 
@@ -35,6 +37,10 @@ export const useUsersStore = create<Users>()(
             immer((set) => ({
                 usernameState: '',
                 isLoading: false,
+                setIsLoading: (): void =>
+                    set((state) => {
+                        state.isLoading = !state.isLoading;
+                    }),
                 setUsernameState: (): void => {
                     set({ usernameState: '' });
                 },
@@ -49,13 +55,12 @@ export const useUsersStore = create<Users>()(
                             'content-type': 'application/json',
                         },
                     });
-                    set({ isLoading: true });
                     const responseData = (await response.json()) as User;
                     localStorage.setItem('access_token', responseData.token); // Посмотреть как поменять LS на Cookie
                     set({
                         usernameState: responseData.username,
-                        isLoading: false,
                     });
+                    return responseData;
                 },
                 registrationUser: async (
                     email: string,
@@ -73,12 +78,11 @@ export const useUsersStore = create<Users>()(
                             'content-type': 'application/json',
                         },
                     });
-                    set({ isLoading: true });
                     const responseData = (await response.json()) as User;
                     set({
                         usernameState: responseData.username,
-                        isLoading: false,
                     });
+                    return responseData;
                 },
                 checkUser: async () => {
                     const accessToken = localStorage.getItem('access_token');

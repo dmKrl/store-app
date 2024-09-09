@@ -2,11 +2,17 @@ import { Link } from 'react-router-dom';
 import { useUsersStore } from '../../store/UsersStore';
 import s from './UserLogo.module.css';
 import { useModalStore } from '../../store/ModalStore';
-
+import { useMemo } from 'react';
+//Разобраться, почему происходит ререндер компонента несколько раз
+//это касается изменения usernameState
 const UserLogo = () => {
     const { usernameState, setUsernameState } = useUsersStore();
     const { setIsVisibleModalAuth } = useModalStore();
     console.log(usernameState);
+
+    const memoizedUsername = useMemo(() => {
+        return usernameState;
+    }, [usernameState]);
 
     const quitUser = (): void => {
         localStorage.setItem('access_token', '');
@@ -19,12 +25,12 @@ const UserLogo = () => {
 
     return (
         <div className={s.userLogo}>
-            <Link to="/auth" onClick={quitUser}>
+            <button className={s.userLogoButton} onClick={quitUser}>
                 <div className={s.userLogoImg} />
-            </Link>
+            </button>
             <div className={s.userLogoName}>
-                {usernameState ? (
-                    usernameState
+                {memoizedUsername ? (
+                    memoizedUsername
                 ) : (
                     <Link
                         to=""
