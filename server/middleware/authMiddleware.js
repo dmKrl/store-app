@@ -10,10 +10,10 @@ module.exports = function (req, res, next) {
       res
         .status(401)
         .json({ status: 401, message: 'Пользователь не авторизован' });
-      const decoded = jwt.verify(token, process.env.SECRET_KEY);
-      req.user = decoded;
-      next();
     }
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    req.user = decoded;
+    next();
   } catch (e) {
     res
       .status(401)

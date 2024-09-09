@@ -7,6 +7,19 @@
     margin: 0 auto;
     height: 100%;
 }
+.formWrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000ba;
+    z-index: 99999;
+    transition: all 0.5s ease;
+}
+.formButtonLogo {
+    background: none;
+}
 .formContent {
     display: flex;
     flex-direction: column;
@@ -78,5 +91,6 @@
     background: #ffffffc4;
     box-shadow: none;
 }
-.formLink {
+.formSubmitButtonDisabled {
+    background: #ffffff40;
 }

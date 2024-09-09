@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import { authorizationUser } from '../../api/api';
 import '../../App.css';
 import s from './AuthPage.module.css';
 import ValidateError from '../../components/UI/ValidateError/ValidateError';
+import { useUsersStore } from '../../store/UsersStore';
+import { useModalStore } from '../../store/ModalStore';
 
 type Data = {
     email: string;
@@ -14,7 +14,9 @@ type Data = {
 const AuthPage = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [isGettingData, setIsGettingData] = useState<boolean>(false);
+    const [responseError, setResponseError] = useState<string>('');
+    const { authUser, isLoading, setIsLoading } = useUsersStore();
+    const { switchVisibleModals, closeVisibleModals } = useModalStore();
 
     const {
         register,
@@ -24,72 +26,98 @@ const AuthPage = () => {
     } = useForm<Data>({ mode: 'onBlur' });
 
     const onSubmit = (data: Data) => {
-        setIsGettingData(true);
-        console.log(data);
         reset();
-        return authorizationUser(data.email, data.password)
+        setIsLoading();
+        authUser(data.email, data.password)
             .then((response) => {
-                console.log(response);
+                if (response.message) {
+                    throw new Error(response.message);
+                }
+                setIsLoading();
+                closeVisibleModals();
+                setResponseError('');
             })
-            .catch((e) => console.log(e))
-            .finally(() => {
-                setIsGettingData(false);
+            .catch((error: unknown) => {
+                if (error instanceof Error) {
+                    setIsLoading();
+                    return setResponseError(error.message);
+                }
+                return setResponseError('Непредвиденная ошибка');
             });
     };
 
     return (
-        <div className={s.formContainer}>
-            <div className={s.formContent}>
-                <Link to="/">
-                    <img src="image/apple.svg" alt="" />
-                </Link>
-                <p className={s.formTitle}>Авторизуйтесь в интернет-магазине</p>
-                <form
-                    className={s.form}
-                    action=""
-                    onSubmit={handleSubmit(onSubmit)}
-                >
-                    <input
-                        className={s.formInput}
-                        value={email}
-                        type="email"
-                        placeholder="Введите ваш email"
-                        {...register('email', {
-                            required: 'Поле обязательно к заполнению',
-                            onChange: (event) => setEmail(event.target.value),
-                        })}
-                    />
-                    {errors?.email && (
-                        <ValidateError errorsMessage={errors?.email?.message} />
-                    )}
-                    <input
-                        className={s.formInput}
-                        value={password}
-                        type="password"
-                        minLength={8}
-                        placeholder="Введите пароль"
-                        {...register('password', {
-                            required: 'Поле обязательно к заполнению',
-                            onChange: (event) =>
-                                setPassword(event.target.value),
-                        })}
-                    />
-                    {errors?.password && (
-                        <ValidateError
-                            errorsMessage={errors?.password?.message}
-                        />
-                    )}
-                    <button className={s.formSubmitButton} type="submit">
-                        {isGettingData ? (
-                            <span>Загрузка...</span>
-                        ) : (
-                            <span>Авторизоваться</span>
-                        )}
+        <div className={s.formWrapper}>
+            <div className={s.formContainer}>
+                <div className={s.formContent}>
+                    <button
+                        className={s.formButtonLogo}
+                        onClick={closeVisibleModals}
+                    >
+                        <img src="image/apple.svg" alt="" />
                     </button>
-                    <Link className={s.formLink} to="/register">
-                        Зарегистрироваться
-                    </Link>
-                </form>
+                    <p className={s.formTitle}>
+                        Авторизуйтесь в интернет-магазине
+                    </p>
+                    <form
+                        className={s.form}
+                        action=""
+                        onSubmit={handleSubmit(onSubmit)}
+                    >
+                        <input
+                            className={s.formInput}
+                            value={email}
+                            type="email"
+                            placeholder="Введите ваш email"
+                            {...register('email', {
+                                required: 'Поле обязательно к заполнению',
+                                onChange: (event) =>
+                                    setEmail(event.target.value),
+                            })}
+                        />
+                        {errors?.email && (
+                            <ValidateError
+                                errorsMessage={errors?.email?.message}
+                            />
+                        )}
+                        <input
+                            className={s.formInput}
+                            value={password}
+                            type="password"
+                            placeholder="Введите пароль"
+                            {...register('password', {
+                                required: 'Поле обязательно к заполнению',
+                                onChange: (event) =>
+                                    setPassword(event.target.value),
+                            })}
+                        />
+                        {errors?.password && (
+                            <ValidateError
+                                errorsMessage={errors?.password?.message}
+                            />
+                        )}
+                        {responseError && (
+                            <ValidateError errorsMessage={responseError} />
+                        )}
+                        <button
+                            className={`${s.formSubmitButton} ${isLoading && s.formSubmitButtonDisabled}`}
+                            type="submit"
+                            disabled={isLoading}
+                        >
+                            {isLoading ? (
+                                <span>Загрузка...</span>
+                            ) : (
+                                <span>Авторизоваться</span>
+                            )}
+                        </button>
+                        <button
+                            className={s.formLink}
+                            onClick={switchVisibleModals}
+                        >
+                            Зарегистрироваться
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     );
