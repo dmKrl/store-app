@@ -3,6 +3,7 @@ import s from './CatalogPage.module.css';
 import '../../App.css';
 
 const CatalogPage = () => {
+
     return (
         <div className={s.catalogPageContainer}>
             <div className="container">
