@@ -1,18 +1,20 @@
-import dataProducts from '../../dataProductMOCK.json';
 import CatalogMainCard from '../UI/CatalogMainCard/CatalogMainCard';
 import s from './CatalogMain.module.css';
+import { useCatalogStore } from '../../store/CatalogStore';
 
 const CatalogMain = () => {
+    const { allDevices } = useCatalogStore();
+    console.log(allDevices);
     return (
         <div className={s.catalogMain}>
-            {dataProducts.map((product) => {
+            {allDevices.map((product) => {
                 return (
                     <CatalogMainCard
                         key={product.id}
                         numGen={product.numGen}
-                        nameProduct={product.nameProduct}
-                        priceProduct={product.priceProduct}
-                        imgProduct={product.imgProduct}
+                        nameProduct={product.name}
+                        priceProduct={product.price}
+                        imgProduct={product.img}
                     />
                 );
             })}
