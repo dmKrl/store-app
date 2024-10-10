@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import CatalogButton from '../CatalogButton/CatalogButton';
 import s from './CatalogMainCard.module.css';
-
+import changePriceView from '../../../app/changePriceView';
 interface CatalogMainCardProps {
     numGen: string;
     nameProduct: string;
@@ -19,13 +19,15 @@ const CatalogMainCard: FC<CatalogMainCardProps> = ({
         <div className={s.catalogMainCard}>
             <img
                 className={s.catalogMainCardImg}
-                src={imgProduct}
+                src={`http://localhost:5000/${imgProduct}`}
                 alt="img-card-product-airPods"
             />
-            <span>{numGen}</span>
+            {numGen && <span>{numGen}</span>}
             <h4 className={s.catalogMainCardHeading}>{nameProduct}</h4>
             <div className={s.catalogMainCardPriceBlock}>
-                <p className={s.catalogMainCardPrice}>{priceProduct}</p>
+                <p className={s.catalogMainCardPrice}>
+                    {changePriceView(parseInt(priceProduct))} ₽
+                </p>
                 <button className={s.catalogMainCardButtonBasket}>
                     <img src="image/basket.png" alt="basket" />
                 </button>
