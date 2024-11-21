@@ -1,4 +1,4 @@
-const { Basket, BasketDevice } = require('../models/models');
+const { BasketDevice, Device } = require('../models/models');
 const ApiError = require('../error/ApiError');
 
 class BasketController {
@@ -24,15 +24,17 @@ class BasketController {
       return next(ApiError.badRequest(e.message));
     }
   }
+
   async getAll(req, res, next) {
-    const { userId } = req.body;
+    const { basketId } = req.body;
     try {
-      const basketDevices = await BasketDevice.findAll({
+      const devices = await BasketDevice.findAll({
         where: {
-          userId: userId,
+          basketId: basketId,
         },
+        include: [{ model: Device }],
       });
-      return res.json(basketDevices);
+      return res.json(devices);
     } catch (e) {
       return next(ApiError.badRequest(e.message));
     }

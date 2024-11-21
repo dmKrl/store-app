@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
+const getBasketAllDevicesUrl = 'http://localhost:5000/api/api/basket';
 
 type BasketDevice = {
     name: string;
@@ -12,19 +13,44 @@ type BasketDevice = {
 interface Basket {
     basketDevices: Array<BasketDevice>;
 
-    setBasketDevices: () => void;
+    setBasketDevices: (devices: Array<BasketDevice>) => void;
+    getAllBasketDevices: (
+        basketId: number | null,
+    ) => Promise<BasketDevice[] | null>;
 }
-
+                //Запрос в Postman работает корректно, но не работает в браузере.
+                //Ругается на body в GET запросе. Разобратся, как исправить проблему
+                //21.11.2024
 export const useBasketStore = create<Basket>()(
     persist(
         devtools(
             immer((set) => ({
                 basketDevices: [],
 
-                setBasketDevices: (): void => {
+                setBasketDevices: (devices): void => {
                     set((state) => {
-                        state.basketDevices !== state.basketDevices;
+                        state.basketDevices = devices;
                     });
+                },
+                getAllBasketDevices: async (
+                    basketId: number | null,
+                ): Promise<BasketDevice[] | null> => {
+                    if (basketId === null) {
+                        return null;
+                    }
+                    const response = await fetch(getBasketAllDevicesUrl, {
+                        method: 'GET',
+                        body: JSON.stringify({
+                            basketId: basketId,
+                        }),
+                        headers: {
+                            'content-type': 'application/json',
+                        },
+                    });
+                    const responseData =
+                        (await response.json()) as Array<BasketDevice>;
+                    set({ basketDevices: responseData });
+                    return responseData;
                 },
             })),
         ),
