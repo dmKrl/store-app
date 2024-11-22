@@ -3,7 +3,6 @@ import { useBasketStore } from '../../store/BasketStore';
 import BasketDescription from '../../components/BasketDescription/BasketDescription';
 import BasketResult from '../../components/BasketResult/BasketResult';
 import BasketItem from '../../components/UI/BasketItem/BasketItem';
-import dataBasketItems from '../../dataBacketItemMOCK.json';
 import s from './BasketPage.module.css';
 import '../../App.css';
 import { useUsersStore } from '../../store/UsersStore';
@@ -13,8 +12,8 @@ const BasketPage = () => {
     const { userState } = useUsersStore();
     console.log(basketDevices);
     useEffect(() => {
-        getAllBasketDevices(userState.userId);
-    }, []);
+        getAllBasketDevices(Number(userState.userId));
+    }, [getAllBasketDevices, userState.userId]);
     return (
         <div className={s.basketPageContainer}>
             <div className="container">
@@ -25,14 +24,14 @@ const BasketPage = () => {
                         {basketDevices.length ? (
                             <>
                                 <div className={s.basketPageItems}>
-                                    {dataBasketItems.map((item) => {
+                                    {basketDevices.map((device) => {
                                         return (
                                             <BasketItem
-                                                key={item.id}
-                                                nameItem={item.nameItem}
-                                                priceItem={item.priceItem}
-                                                quantityItem={item.quantityItem}
-                                                imgItem={item.imgItem}
+                                                key={device.id}
+                                                name={device.name}
+                                                price={device.price}
+                                                quantity={device.quantity}
+                                                image={device.image}
                                             />
                                         );
                                     })}

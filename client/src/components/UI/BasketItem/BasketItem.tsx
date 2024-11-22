@@ -2,19 +2,21 @@ import { FC, useState } from 'react';
 import s from './BasketItem.module.css';
 
 interface BasketItemProps {
-    nameItem: string;
-    priceItem: string;
-    quantityItem: number;
-    imgItem: string;
+    key: string;
+    name: string;
+    price: number;
+    quantity: number;
+    image: string;
 }
 
 const BasketItem: FC<BasketItemProps> = ({
-    nameItem,
-    priceItem,
-    quantityItem,
-    imgItem,
+    key,
+    name,
+    price,
+    quantity,
+    image,
 }) => {
-    const [counter, setCounter] = useState<number>(quantityItem);
+    const [counter, setCounter] = useState<number>(quantity);
 
     function handlerCounterPlus(): void {
         setCounter(counter + 1);
@@ -28,16 +30,16 @@ const BasketItem: FC<BasketItemProps> = ({
     }
 
     return (
-        <div className={s.basketItem}>
+        <div className={s.basketItem} id={key}>
             <div className={s.basketItemDescription}>
-                <img src={imgItem} alt="product-airPods" />
+                <img src={image} alt="product-airPods" />
                 <p
                     className={`${s.basketItemMainText} ${s.basketItemNameItem}`}
                 >
-                    {nameItem}
+                    {name}
                 </p>
             </div>
-            <p className={s.basketItemMainText}>{priceItem}</p>
+            <p className={s.basketItemMainText}>{price}</p>
             <div className={s.basketItemQuantityBlock}>
                 <button type="button" onClick={handlerCounterMinus}>
                     <img src="image/minus.svg" alt="minus-button" />

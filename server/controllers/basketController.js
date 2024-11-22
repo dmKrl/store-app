@@ -26,11 +26,11 @@ class BasketController {
   }
 
   async getAll(req, res, next) {
-    const { basketId } = req.body;
+    const { id } = req.params;
     try {
       const devices = await BasketDevice.findAll({
         where: {
-          basketId: basketId,
+          basketId: id,
         },
         include: [{ model: Device }],
       });

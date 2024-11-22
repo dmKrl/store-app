@@ -4,6 +4,7 @@ import s from '../AuthPage/AuthPage.module.css';
 import ValidateError from '../../components/UI/ValidateError/ValidateError';
 import { useModalStore } from '../../store/ModalStore';
 import { useUsersStore } from '../../store/UsersStore';
+import { useNavigate } from 'react-router';
 
 type Data = {
     email: string;
@@ -20,6 +21,7 @@ const RegisterPage = () => {
     const [validatePassword, setValidatePassword] = useState<boolean>(false);
     const { switchVisibleModals, closeVisibleModals } = useModalStore();
     const { isLoading, setIsLoading, registrationUser } = useUsersStore();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -39,6 +41,7 @@ const RegisterPage = () => {
                 setIsLoading();
                 closeVisibleModals();
                 setValidatePassword(false);
+                navigate('/basket');
             })
             .catch(() => {
                 setIsLoading();
