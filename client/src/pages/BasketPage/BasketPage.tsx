@@ -24,14 +24,14 @@ const BasketPage = () => {
                         {basketDevices.length ? (
                             <>
                                 <div className={s.basketPageItems}>
-                                    {basketDevices.map((device) => {
+                                    {basketDevices.map((item) => {
                                         return (
                                             <BasketItem
-                                                key={device.id}
-                                                name={device.name}
-                                                price={device.price}
-                                                quantity={device.quantity}
-                                                image={device.image}
+                                                key={item.device.id}
+                                                name={item.device.name}
+                                                price={item.device.price}
+                                                quantity={item.quantity}
+                                                img={item.device.img}
                                             />
                                         );
                                     })}
