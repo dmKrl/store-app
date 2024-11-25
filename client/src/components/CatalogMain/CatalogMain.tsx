@@ -4,7 +4,6 @@ import { useCatalogStore } from '../../store/CatalogStore';
 
 const CatalogMain = () => {
     const { allDevices } = useCatalogStore();
-    console.log(allDevices);
     return (
         <div className={s.catalogMain}>
             {allDevices.map((product) => {

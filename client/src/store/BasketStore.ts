@@ -20,15 +20,20 @@ type BasketDevice = {
     updatedAt: string;
 };
 
+interface BasketPriceDevices {
+    counter: number;
+}
+
 interface Basket {
     basketDevices: Array<BasketDevice>;
-    allPrice: Array<number | null>;
+    allPrice: BasketPriceDevices[];
 
     setBasketDevices: (devices: Array<BasketDevice>) => void;
     getAllBasketDevices: (
         basketId: number | null,
     ) => Promise<BasketDevice[] | null>;
-    setAllPrice: (priceDevice: number) => void;
+    totalSetAllPrice: (totalAllPrice: BasketPriceDevices[]) => void;
+    resetAllPrice: () => void;
 }
 
 export const useBasketStore = create<Basket>()(
@@ -36,16 +41,22 @@ export const useBasketStore = create<Basket>()(
         devtools(
             immer((set) => ({
                 basketDevices: [],
-                allPrice: [],
-
+                allPrice: [{ counter: 0 }],
+                totalSetAllPrice: (
+                    totalAllPrice: BasketPriceDevices[],
+                ): void => {
+                    set((state) => {
+                        state.allPrice = totalAllPrice;
+                    });
+                },
+                resetAllPrice: (): void => {
+                    set((state) => {
+                        state.allPrice = [{ counter: 0 }];
+                    });
+                },
                 setBasketDevices: (devices): void => {
                     set((state) => {
                         state.basketDevices = devices;
-                    });
-                },
-                setAllPrice: (priceDevice: number): void => {
-                    set((state) => {
-                        state.allPrice.push(priceDevice);
                     });
                 },
                 getAllBasketDevices: async (
@@ -67,7 +78,7 @@ export const useBasketStore = create<Basket>()(
                         (await response.json()) as Array<BasketDevice>;
                     set({ basketDevices: responseData });
                     return responseData;
-                },
+                }
             })),
         ),
         { name: 'basketStore', version: 1 },

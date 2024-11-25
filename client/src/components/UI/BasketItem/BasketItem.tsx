@@ -1,26 +1,16 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import s from './BasketItem.module.css';
 import changePriceView from '../../../app/changePriceView';
-import { useBasketStore } from '../../../store/BasketStore';
 
 interface BasketItemProps {
-    key: string;
     name: string;
     price: number;
     quantity: number;
     img: string;
 }
 
-const BasketItem: FC<BasketItemProps> = ({
-    key,
-    name,
-    price,
-    quantity,
-    img,
-}) => {
+const BasketItem: FC<BasketItemProps> = ({ name, price, quantity, img }) => {
     const [counter, setCounter] = useState<number>(quantity);
-    const { setAllPrice } = useBasketStore();
-
     function handlerCounterPlus(): void {
         setCounter(counter + 1);
     }
@@ -32,21 +22,10 @@ const BasketItem: FC<BasketItemProps> = ({
         setCounter(counter - 1);
     }
 
-    function sumPriceAndQuantityDevice(
-        price: number,
-        quantity: number,
-    ): number {
-        return price * quantity;
-    }
-
-    useEffect(() => {
-        setAllPrice(sumPriceAndQuantityDevice(price, quantity));
-    }, []);
-
     //Починить путь src к картинке товара в корзине.
     //Нужно исколючить в пути localhost по аналогии с Catalog-card
     return (
-        <div className={s.basketItem} id={key}>
+        <div className={s.basketItem}>
             <div className={s.basketItemDescription}>
                 <img
                     src={`http://localhost:5000/${img}`}
