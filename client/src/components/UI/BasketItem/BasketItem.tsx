@@ -1,21 +1,16 @@
 import { FC, useState } from 'react';
 import s from './BasketItem.module.css';
+import changePriceView from '../../../app/changePriceView';
 
 interface BasketItemProps {
-    nameItem: string;
-    priceItem: string;
-    quantityItem: number;
-    imgItem: string;
+    name: string;
+    price: number;
+    quantity: number;
+    img: string;
 }
 
-const BasketItem: FC<BasketItemProps> = ({
-    nameItem,
-    priceItem,
-    quantityItem,
-    imgItem,
-}) => {
-    const [counter, setCounter] = useState<number>(quantityItem);
-
+const BasketItem: FC<BasketItemProps> = ({ name, price, quantity, img }) => {
+    const [counter, setCounter] = useState<number>(quantity);
     function handlerCounterPlus(): void {
         setCounter(counter + 1);
     }
@@ -27,17 +22,22 @@ const BasketItem: FC<BasketItemProps> = ({
         setCounter(counter - 1);
     }
 
+    //Починить путь src к картинке товара в корзине.
+    //Нужно исколючить в пути localhost по аналогии с Catalog-card
     return (
         <div className={s.basketItem}>
             <div className={s.basketItemDescription}>
-                <img src={imgItem} alt="product-airPods" />
+                <img
+                    src={`http://localhost:5000/${img}`}
+                    alt="product-airPods"
+                />
                 <p
                     className={`${s.basketItemMainText} ${s.basketItemNameItem}`}
                 >
-                    {nameItem}
+                    {name}
                 </p>
             </div>
-            <p className={s.basketItemMainText}>{priceItem}</p>
+            <p className={s.basketItemMainText}>{changePriceView(price)}</p>
             <div className={s.basketItemQuantityBlock}>
                 <button type="button" onClick={handlerCounterMinus}>
                     <img src="image/minus.svg" alt="minus-button" />
@@ -47,7 +47,9 @@ const BasketItem: FC<BasketItemProps> = ({
                     <img src="image/plus.svg" alt="plus-button" />
                 </button>
             </div>
-            <p className={s.basketItemMainText}>62 990.00 ₽</p>
+            <p
+                className={s.basketItemMainText}
+            >{`${changePriceView(price * quantity)} Р.`}</p>
         </div>
     );
 };

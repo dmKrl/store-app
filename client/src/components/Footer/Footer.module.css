@@ -1,7 +1,9 @@
 .footer {
     background: #2c2b29;
-    position: relative;
+    position: fixed;
     z-index: 1;
+    width: 100%;
+    bottom: 0;
 }
 .footerUp {
     display: flex;

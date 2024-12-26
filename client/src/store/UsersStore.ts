@@ -9,6 +9,7 @@ type User = {
     token: string;
     username: string;
     message: string;
+    userId: number | null;
 };
 type UserToken = {
     token: string;
@@ -17,7 +18,7 @@ type UserToken = {
 };
 
 interface Users {
-    usernameState: string;
+    userState: User;
     isLoading: boolean;
 
     authUser: (email: string, password: string) => Promise<User>;
@@ -26,7 +27,7 @@ interface Users {
         password: string,
         username: string,
     ) => Promise<User>;
-    setUsernameState: () => void;
+    setUserState: () => void;
     setIsLoading: () => void;
     checkUser: () => Promise<UserToken>;
 }
@@ -35,14 +36,26 @@ export const useUsersStore = create<Users>()(
     persist(
         devtools(
             immer((set) => ({
-                usernameState: '',
+                userState: {
+                    token: '',
+                    username: '',
+                    userId: null,
+                    message: '',
+                },
                 isLoading: false,
                 setIsLoading: (): void =>
                     set((state) => {
                         state.isLoading = !state.isLoading;
                     }),
-                setUsernameState: (): void => {
-                    set({ usernameState: '' });
+                setUserState: (): void => {
+                    set({
+                        userState: {
+                            token: '',
+                            username: '',
+                            userId: 0,
+                            message: '',
+                        },
+                    });
                 },
                 authUser: async (email: string, password: string) => {
                     const response = await fetch(authorizationUrl, {
@@ -57,8 +70,9 @@ export const useUsersStore = create<Users>()(
                     });
                     const responseData = (await response.json()) as User;
                     localStorage.setItem('access_token', responseData.token); // Посмотреть как поменять LS на Cookie
+                    console.log(responseData);
                     set({
-                        usernameState: responseData.username,
+                        userState: responseData,
                     });
                     return responseData;
                 },
@@ -80,7 +94,7 @@ export const useUsersStore = create<Users>()(
                     });
                     const responseData = (await response.json()) as User;
                     set({
-                        usernameState: responseData.username,
+                        userState: responseData,
                     });
                     return responseData;
                 },

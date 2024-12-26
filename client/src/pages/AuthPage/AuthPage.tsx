@@ -5,6 +5,7 @@ import s from './AuthPage.module.css';
 import ValidateError from '../../components/UI/ValidateError/ValidateError';
 import { useUsersStore } from '../../store/UsersStore';
 import { useModalStore } from '../../store/ModalStore';
+import { useNavigate } from 'react-router';
 
 type Data = {
     email: string;
@@ -17,6 +18,7 @@ const AuthPage = () => {
     const [responseError, setResponseError] = useState<string>('');
     const { authUser, isLoading, setIsLoading } = useUsersStore();
     const { switchVisibleModals, closeVisibleModals } = useModalStore();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -36,6 +38,7 @@ const AuthPage = () => {
                 setIsLoading();
                 closeVisibleModals();
                 setResponseError('');
+                navigate('/basket');
             })
             .catch((error: unknown) => {
                 if (error instanceof Error) {
