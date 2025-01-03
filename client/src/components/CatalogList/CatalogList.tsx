@@ -1,6 +1,5 @@
 import CatalogCard from '../UI/CatalogCard/CatalogCard';
 import s from './CatalogList.module.css';
-import '../../App.css';
 
 const CatalogComponent = () => {
     return (

@@ -2,7 +2,7 @@
 import { useBasketStore } from '../../store/BasketStore';
 import MainButton from '../UI/MainButton/MainButton';
 import s from './BasketResult.module.css';
-import sumAllPriceBasketDevices from '../../app/sumAllPriceBasketDevices';
+import sumAllPriceBasketDevices from '../../helpers/sumAllPriceBasketDevices';
 
 const BasketResult = () => {
     const { allPrice } = useBasketStore();

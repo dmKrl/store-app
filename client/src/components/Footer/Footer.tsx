@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import '../../App.css';
 import s from './Footer.module.css';
 import { useUsersStore } from '../../store/UsersStore';
 import { useModalStore } from '../../store/ModalStore';

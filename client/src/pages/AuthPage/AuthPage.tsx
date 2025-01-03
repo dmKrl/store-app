@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import '../../App.css';
 import s from './AuthPage.module.css';
 import ValidateError from '../../components/UI/ValidateError/ValidateError';
 import { useUsersStore } from '../../store/UsersStore';

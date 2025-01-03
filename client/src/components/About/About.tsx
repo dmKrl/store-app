@@ -1,5 +1,4 @@
 import s from './About.module.css';
-import '../../App.css';
 import MainButton from '../UI/MainButton/MainButton';
 
 const About = () => {

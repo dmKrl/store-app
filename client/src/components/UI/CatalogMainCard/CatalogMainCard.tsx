@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import CatalogButton from '../CatalogButton/CatalogButton';
 import s from './CatalogMainCard.module.css';
-import changePriceView from '../../../app/changePriceView';
+import changePriceView from '../../../helpers/changePriceView';
 interface CatalogMainCardProps {
     numGen: string;
     nameProduct: string;

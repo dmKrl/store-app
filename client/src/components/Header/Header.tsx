@@ -3,7 +3,6 @@ import NavBar from '../NavBar/NavBar';
 import UserLogo from '../UserLogo/UserLogo';
 import s from './Header.module.css';
 import imgPath from '../../../config';
-import '../../App.css';
 
 const Header = () => {
     return (

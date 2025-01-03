@@ -1,5 +1,4 @@
 import s from './MainCharacteristics.module.css';
-import '../../App.css';
 
 const Characteristics = () => {
     return (

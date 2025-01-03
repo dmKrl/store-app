@@ -1,6 +1,5 @@
 import MainButton from '../UI/MainButton/MainButton';
 import s from './TopContent.module.css';
-import '../../App.css';
 
 const TopContent = () => {
     return (

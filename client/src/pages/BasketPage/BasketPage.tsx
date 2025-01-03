@@ -4,7 +4,6 @@ import BasketDescription from '../../components/BasketDescription/BasketDescript
 import BasketResult from '../../components/BasketResult/BasketResult';
 import BasketItem from '../../components/UI/BasketItem/BasketItem';
 import s from './BasketPage.module.css';
-import '../../App.css';
 import { useUsersStore } from '../../store/UsersStore';
 
 interface BasketPriceDevices {

@@ -1,6 +1,5 @@
 import CatalogMain from '../../components/CatalogMain/CatalogMain';
 import s from './CatalogPage.module.css';
-import '../../App.css';
 
 const CatalogPage = () => {
 

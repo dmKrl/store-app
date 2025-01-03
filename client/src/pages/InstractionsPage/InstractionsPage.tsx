@@ -1,7 +1,6 @@
 import InstractionsCard from '../../components/UI/InstractionsCard/InstractionsCard';
 import InstractionsList from '../../components/UI/InstractionsList/InstractionsList';
 import s from './InstractionsPage.module.css';
-import '../../App.css';
 
 const InstractionsPage = () => {
     return (
