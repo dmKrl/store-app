@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './styles/App.css';
 import '../index.css';
 import AppRoutes from '../routes';
-import { useCatalogStore } from '../store/CatalogStore';
+import { useCatalogStore } from '../features/store/CatalogStore/CatalogStore';
 
 function App() {
     const { getAllDevices } = useCatalogStore();

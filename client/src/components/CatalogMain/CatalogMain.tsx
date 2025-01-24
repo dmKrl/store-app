@@ -1,6 +1,6 @@
 import CatalogMainCard from '../UI/CatalogMainCard/CatalogMainCard';
 import s from './CatalogMain.module.css';
-import { useCatalogStore } from '../../store/CatalogStore';
+import { useCatalogStore } from '../../features/store/CatalogStore/CatalogStore';
 
 const CatalogMain = () => {
     const { allDevices } = useCatalogStore();

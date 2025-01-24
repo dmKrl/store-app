@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import AuthPage from '../AuthPage/AuthPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import { useModalStore } from '../../store/ModalStore';
+import { useModalStore } from '../../features/store/ModalStore/ModalStore';
 
 const MainPage = () => {
     const { isVisibleModalAuth, isVisibleModalRegistration } = useModalStore();

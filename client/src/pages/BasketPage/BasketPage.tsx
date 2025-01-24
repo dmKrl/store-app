@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useBasketStore } from '../../store/BasketStore';
+import { useBasketStore } from '../../features/store/BasketStore/BasketStore';
 import BasketDescription from '../../components/BasketDescription/BasketDescription';
 import BasketResult from '../../components/BasketResult/BasketResult';
 import BasketItem from '../../components/UI/BasketItem/BasketItem';
 import s from './BasketPage.module.css';
-import { useUsersStore } from '../../store/UsersStore';
+import { useUsersStore } from '../../features/store/UsersStore/UsersStore';
 
 interface BasketPriceDevices {
     counter: number;

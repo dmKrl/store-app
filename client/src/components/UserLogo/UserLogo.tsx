@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useUsersStore } from '../../store/UsersStore';
+import { useUsersStore } from '../../features/store/UsersStore/UsersStore';
 import s from './UserLogo.module.css';
-import { useModalStore } from '../../store/ModalStore';
+import { useModalStore } from '../../features/store/ModalStore/ModalStore';
 import { useMemo } from 'react';
 //Разобраться, почему происходит ререндер компонента несколько раз
 //это касается изменения usernameState
