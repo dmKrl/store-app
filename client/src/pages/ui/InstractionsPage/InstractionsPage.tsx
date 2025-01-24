@@ -1,5 +1,5 @@
-import InstractionsCard from '../../components/UI/InstractionsCard/InstractionsCard';
-import InstractionsList from '../../components/UI/InstractionsList/InstractionsList';
+import InstractionsCard from '../../../shared/ui/InstractionsCard/InstractionsCard';
+import InstractionsList from '../../../shared/ui/InstractionsList/InstractionsList';
 import s from './InstractionsPage.module.css';
 
 const InstractionsPage = () => {

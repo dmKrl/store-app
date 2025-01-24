@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import s from './Footer.module.css';
-import { useUsersStore } from '../../features/store/UsersStore/UsersStore';
-import { useModalStore } from '../../features/store/ModalStore/ModalStore';
+import { useUsersStore } from '../../../features/store/UsersStore/UsersStore';
+import { useModalStore } from '../../../features/store/ModalStore/ModalStore';
 
 const Footer = () => {
     const { checkUser } = useUsersStore();

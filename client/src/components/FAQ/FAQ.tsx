@@ -1,5 +1,5 @@
-import CatalogButton from '../UI/CatalogButton/CatalogButton';
-import ItemFAQ from '../UI/ItemFAQ/ItemFAQ';
+import CatalogButton from '../../shared/ui/CatalogButton/CatalogButton';
+import ItemFAQ from '../../shared/ui/ItemFAQ/ItemFAQ';
 import s from './FAQ.module.css';
 
 const FAQ = () => {

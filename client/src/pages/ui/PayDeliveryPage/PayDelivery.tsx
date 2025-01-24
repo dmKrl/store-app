@@ -1,5 +1,5 @@
-import PayDeliveryList from '../../components/PayDeliveryList/PayDeliveryList';
-import PayDeliveryItem from '../../components/UI/PayDeliveryItem/PayDeliveryItem';
+import PayDeliveryList from '../../../components/PayDeliveryList/PayDeliveryList';
+import PayDeliveryItem from '../../../shared/ui/PayDeliveryItem/PayDeliveryItem';
 import s from './PayDelivery.module.css';
 
 const PadDelivery = () => {

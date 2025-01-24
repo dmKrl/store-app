@@ -1,4 +1,4 @@
-import CatalogCard from '../UI/CatalogCard/CatalogCard';
+import CatalogCard from '../../shared/ui/CatalogCard/CatalogCard';
 import s from './CatalogList.module.css';
 
 const CatalogComponent = () => {

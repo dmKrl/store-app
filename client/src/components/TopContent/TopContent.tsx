@@ -1,4 +1,4 @@
-import MainButton from '../UI/MainButton/MainButton';
+import MainButton from '../../shared/ui/MainButton/MainButton';
 import s from './TopContent.module.css';
 
 const TopContent = () => {

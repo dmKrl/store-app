@@ -1,6 +1,6 @@
 // import { current } from 'immer';
 import { useBasketStore } from '../../features/store/BasketStore/BasketStore';
-import MainButton from '../UI/MainButton/MainButton';
+import MainButton from '../../shared/ui/MainButton/MainButton';
 import s from './BasketResult.module.css';
 import sumAllPriceBasketDevices from '../../shared/lib/sumAllPriceBasketDevices';
 

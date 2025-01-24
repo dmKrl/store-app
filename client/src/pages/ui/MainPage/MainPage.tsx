@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../../widgets/ui/Header/Header';
+import Footer from '../../../widgets/ui/Footer/Footer';
 import AuthPage from '../AuthPage/AuthPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import { useModalStore } from '../../features/store/ModalStore/ModalStore';
+import { useModalStore } from '../../../features/store/ModalStore/ModalStore';
 
 const MainPage = () => {
     const { isVisibleModalAuth, isVisibleModalRegistration } = useModalStore();

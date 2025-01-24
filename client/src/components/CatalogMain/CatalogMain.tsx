@@ -1,4 +1,4 @@
-import CatalogMainCard from '../UI/CatalogMainCard/CatalogMainCard';
+import CatalogMainCard from '../../shared/ui/CatalogMainCard/CatalogMainCard';
 import s from './CatalogMain.module.css';
 import { useCatalogStore } from '../../features/store/CatalogStore/CatalogStore';
 

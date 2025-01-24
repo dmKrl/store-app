@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import s from './AuthPage.module.css';
-import ValidateError from '../../components/UI/ValidateError/ValidateError';
-import { useUsersStore } from '../../features/store/UsersStore/UsersStore';
-import { useModalStore } from '../../features/store/ModalStore/ModalStore';
+import ValidateError from '../../../shared/ui/ValidateError/ValidateError';
+import { useUsersStore } from '../../../features/store/UsersStore/UsersStore';
+import { useModalStore } from '../../../features/store/ModalStore/ModalStore';
 import { useNavigate } from 'react-router';
 
 type Data = {
