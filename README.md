@@ -8,11 +8,16 @@ Full-stack веб-приложение интернет магазина тех�
 
 ## Технологический стек:
 
+#### Frontend:
+
 TypeScript  
 React  
 Vite  
 ZUSTAND  
-React-router-dom  
+React-router-dom
+
+#### Backend:
+
 REST API  
 Node.js  
 PostgreSQL  

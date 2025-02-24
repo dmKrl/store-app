@@ -1,13 +1,16 @@
+import MainLayouts from 'src/pages/ui/MainLayouts/MainLayouts';
+import {
+    BasketPage,
+    CatalogPage,
+    ContactsPage,
+    InfoProductPage,
+    InstractionsPage,
+    MainPage,
+    NotFound,
+    PayDelivery
+} from 'src/pages';
 import { Route, Routes } from 'react-router';
-import MainPage from './pages/MainPage/MainPage';
-import MainLayouts from './components/MainLayouts/MainLayouts';
-import NotFound from './pages/NotFound/NotFound';
-import PayDelivery from './pages/PayDeliveryPage/PayDelivery';
-import ContactsPage from './pages/ContactsPage/ContactsPage';
-import InfoProductPage from './pages/InfoProductPage/InfoProductPage';
-import InstractionsPage from './pages/InstractionsPage/InstractionsPage';
-import CatalogPage from './pages/CatalogPage/CatalogPage';
-import BasketPage from './pages/BasketPage/BasketPage';
+
 // import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 const AppRoutes = () => {

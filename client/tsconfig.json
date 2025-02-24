@@ -7,20 +7,24 @@
         "skipLibCheck": true,
 
         /* Bundler mode */
-        "moduleResolution": "bundler",
+        "moduleResolution": "node",
         "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
+        "esModuleInterop": true,
         "jsx": "react-jsx",
-
+        "baseUrl": ".",
+        "paths": {
+            "src/*": ["./src/*"]
+        },
         /* Linting */
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": ["src"],
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
     "ts-node": {
         "compilerOptions": {
             "composite": true,
