@@ -1,7 +1,7 @@
 import CatalogCard from 'src/shared/ui/CatalogCard/CatalogCard';
 import s from './CatalogList.module.css';
 
-const CatalogComponent = () => {
+const CatalogList = () => {
     return (
         <div className="container">
             <div className={s.catalogWrapper}>
@@ -37,4 +37,4 @@ const CatalogComponent = () => {
     );
 };
 
-export default CatalogComponent;
+export default CatalogList;

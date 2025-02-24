@@ -4,7 +4,7 @@ import s from './BasketResult.module.css';
 import sumAllPriceBasketDevices from 'src/shared/lib/sumAllPriceBasketDevices';
 import MainButton from 'src/shared/ui/MainButton/MainButton';
 
-const BasketResult = () => {
+export const BasketResult = () => {
     const { allPrice } = useBasketStore();
     console.log(allPrice);
 
@@ -24,4 +24,3 @@ const BasketResult = () => {
     );
 };
 
-export default BasketResult;

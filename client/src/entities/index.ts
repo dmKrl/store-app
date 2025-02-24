@@ -1,0 +1,1 @@
+export { BasketResult } from './ui/BasketResult/BasketResult'

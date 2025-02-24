@@ -1,4 +1,4 @@
-import MainLayouts from 'src/components/MainLayouts/MainLayouts';
+import MainLayouts from 'src/pages/ui/MainLayouts/MainLayouts';
 import {
     BasketPage,
     CatalogPage,

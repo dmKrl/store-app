@@ -1,4 +1,4 @@
-import CatalogMain from 'src/components/CatalogMain/CatalogMain';
+import CatalogMain from 'src/widgets/ui/CatalogMain/CatalogMain';
 import s from './CatalogPage.module.css';
 
 export const CatalogPage = () => {

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import s from './BasketPage.module.css';
 import { useBasketStore, useUsersStore } from 'src/features/store';
-import BasketDescription from 'src/components/BasketDescription/BasketDescription';
+import BasketDescription from 'src/shared/ui/BasketDescription/BasketDescription';
 import BasketItem from 'src/shared/ui/BasketItem/BasketItem';
-import BasketResult from 'src/components/BasketResult/BasketResult';
+import { BasketResult } from 'src/entities';
 
 interface BasketPriceDevices {
     counter: number;
