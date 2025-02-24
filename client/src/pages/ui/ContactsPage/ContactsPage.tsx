@@ -1,6 +1,6 @@
 import s from './ContactsPage.module.css';
 
-const ContactsPage = () => {
+export const ContactsPage = () => {
     return (
         <div className={s.contactsWrapper}>
             <div className={s.contactsWrapperBlock}>
@@ -28,4 +28,3 @@ const ContactsPage = () => {
     );
 };
 
-export default ContactsPage;

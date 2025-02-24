@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import s from '../styles/LoginPages.module.css';
 import { useNavigate } from 'react-router';
-import { useModalStore, useUsersStore } from 'features/store';
-import ValidateError from 'shared/ui/ValidateError/ValidateError';
+import { useModalStore, useUsersStore } from 'src/features/store';
+import ValidateError from 'src/shared/ui/ValidateError/ValidateError';
 
 type Data = {
     email: string;
     password: string;
 };
 
-const AuthPage = () => {
+export const AuthPage = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [responseError, setResponseError] = useState<string>('');
@@ -123,5 +123,3 @@ const AuthPage = () => {
         </div>
     );
 };
-
-export default AuthPage;

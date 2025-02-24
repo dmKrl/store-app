@@ -1,7 +1,7 @@
-import CatalogMain from 'components/CatalogMain/CatalogMain';
+import CatalogMain from 'src/components/CatalogMain/CatalogMain';
 import s from './CatalogPage.module.css';
 
-const CatalogPage = () => {
+export const CatalogPage = () => {
 
     return (
         <div className={s.catalogPageContainer}>
@@ -15,4 +15,3 @@ const CatalogPage = () => {
     );
 };
 
-export default CatalogPage;

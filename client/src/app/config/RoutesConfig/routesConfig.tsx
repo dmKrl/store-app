@@ -1,13 +1,13 @@
 import { Suspense } from "react";
 import { RouteObject } from "react-router";
-import NotFound from "pages/ui/NotFound/NotFound";
-import MainPage from "pages/ui/MainPage/MainPage";
-import PayDelivery from "pages/ui/PayDeliveryPage/PayDelivery";
-import ContactsPage from "pages/ui/ContactsPage/ContactsPage";
-import InfoProductPage from "pages/ui/InfoProductPage/InfoProductPage";
-import InstractionsPage from "pages/ui/InstractionsPage/InstractionsPage";
-import CatalogPage from "pages/ui/CatalogPage/CatalogPage";
-import BasketPage from "pages/ui/BasketPage/BasketPage";
+import { NotFound } from "src/pages/ui/NotFound/NotFound";
+import { MainPage } from "src/pages/ui/MainPage/MainPage";
+import { PayDelivery } from "src/pages/ui/PayDeliveryPage/PayDelivery";
+import { ContactsPage } from "src/pages/ui/ContactsPage/ContactsPage";
+import { InfoProductPage } from "src/pages/ui/InfoProductPage/InfoProductPage";
+import { InstractionsPage } from "src/pages/ui/InstractionsPage/InstractionsPage";
+import { CatalogPage } from "src/pages/ui/CatalogPage/CatalogPage";
+import { BasketPage } from "src/pages/ui/BasketPage/BasketPage";
 
 export const routesConfig: RouteObject[] = [
     {

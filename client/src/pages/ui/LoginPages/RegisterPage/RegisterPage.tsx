@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import s from '../styles/LoginPages.module.css';
 import { useNavigate } from 'react-router';
-import { useModalStore, useUsersStore } from 'features/store';
-import ValidateError from 'shared/ui/ValidateError/ValidateError';
+import { useModalStore, useUsersStore } from 'src/features/store';
+import ValidateError from 'src/shared/ui/ValidateError/ValidateError';
 
 type Data = {
     email: string;
@@ -12,7 +12,7 @@ type Data = {
     username: string;
 };
 
-const RegisterPage = () => {
+export const RegisterPage = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [repeatPassword, setRepeatPassword] = useState<string>('');
@@ -157,5 +157,3 @@ const RegisterPage = () => {
         </div>
     );
 };
-
-export default RegisterPage;

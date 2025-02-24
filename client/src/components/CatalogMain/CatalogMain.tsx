@@ -1,5 +1,5 @@
-import { useCatalogStore } from 'features/store';
-import CatalogMainCard from 'shared/ui/CatalogMainCard/CatalogMainCard';
+import { useCatalogStore } from 'src/features/store';
+import CatalogMainCard from 'src/shared/ui/CatalogMainCard/CatalogMainCard';
 import s from './CatalogMain.module.css';
 
 const CatalogMain = () => {

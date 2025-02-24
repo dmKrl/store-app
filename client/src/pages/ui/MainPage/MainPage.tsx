@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router';
-import Header from '../../../widgets/ui/Header/Header';
-import Footer from '../../../widgets/ui/Footer/Footer';
-import AuthPage from '../LoginPages/AuthPage/AuthPage';
-import RegisterPage from '../LoginPages/RegisterPage/RegisterPage';
-import { useModalStore } from '../../../features/store/ModalStore/ModalStore';
+import { useModalStore } from 'src/features/store';
+import Header from 'src/widgets/ui/Header/Header';
+import Footer from 'src/widgets/ui/Footer/Footer';
+import { AuthPage } from '../LoginPages/AuthPage/AuthPage';
+import { RegisterPage } from '../LoginPages/RegisterPage/RegisterPage';
 
-const MainPage = () => {
+export const MainPage = () => {
     const { isVisibleModalAuth, isVisibleModalRegistration } = useModalStore();
     return (
         <>
@@ -17,5 +17,3 @@ const MainPage = () => {
         </>
     );
 };
-
-export default MainPage;

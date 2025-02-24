@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import s from './BasketPage.module.css';
-import { useBasketStore, useUsersStore } from 'features/store';
-import BasketDescription from 'components/BasketDescription/BasketDescription';
-import BasketItem from 'shared/ui/BasketItem/BasketItem';
-import BasketResult from 'components/BasketResult/BasketResult';
+import { useBasketStore, useUsersStore } from 'src/features/store';
+import BasketDescription from 'src/components/BasketDescription/BasketDescription';
+import BasketItem from 'src/shared/ui/BasketItem/BasketItem';
+import BasketResult from 'src/components/BasketResult/BasketResult';
 
 interface BasketPriceDevices {
     counter: number;
 }
 
-const BasketPage = () => {
+export const BasketPage = () => {
     const {
         basketDevices,
         getAllBasketDevices,
@@ -71,4 +71,3 @@ const BasketPage = () => {
     );
 };
 
-export default BasketPage;

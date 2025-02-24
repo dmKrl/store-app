@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import s from './NavBar.module.css';
-import { useModalStore, useUsersStore } from 'features/store';
+import { useModalStore, useUsersStore } from 'src/features/store';
 
 const NavBar = () => {
     const { checkUser } = useUsersStore();

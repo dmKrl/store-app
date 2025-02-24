@@ -1,8 +1,8 @@
-import PayDeliveryList from '../../../components/PayDeliveryList/PayDeliveryList';
-import PayDeliveryItem from '../../../shared/ui/PayDeliveryItem/PayDeliveryItem';
+import PayDeliveryItem from 'src/shared/ui/PayDeliveryItem/PayDeliveryItem';
+import PayDeliveryList from 'src/components/PayDeliveryList/PayDeliveryList';
 import s from './PayDelivery.module.css';
 
-const PadDelivery = () => {
+export const PayDelivery = () => {
     return (
         <div className={s.payDelivery}>
             <div className={s.payDeliveryBox}>
@@ -32,5 +32,3 @@ const PadDelivery = () => {
         </div>
     );
 };
-
-export default PadDelivery;

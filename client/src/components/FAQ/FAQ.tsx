@@ -1,6 +1,6 @@
-import ItemFAQ from 'shared/ui/ItemFAQ/ItemFAQ';
+import ItemFAQ from 'src/shared/ui/ItemFAQ/ItemFAQ';
 import s from './FAQ.module.css';
-import CatalogButton from 'shared/ui/CatalogButton/CatalogButton';
+import CatalogButton from 'src/shared/ui/CatalogButton/CatalogButton';
 
 const FAQ = () => {
     return (

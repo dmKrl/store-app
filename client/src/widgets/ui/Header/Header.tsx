@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import NavBar from '../NavBar/NavBar';
-import UserLogo from '../../../shared/ui/UserLogo/UserLogo';
 import s from './Header.module.css';
 import imgPath from '../../../../config';
+import NavBar from '../NavBar/NavBar';
+import UserLogo from 'src/shared/ui/UserLogo/UserLogo';
 
 const Header = () => {
     return (

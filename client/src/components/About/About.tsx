@@ -1,4 +1,4 @@
-import MainButton from 'shared/ui/MainButton/MainButton';
+import MainButton from 'src/shared/ui/MainButton/MainButton';
 import s from './About.module.css';
 
 const About = () => {

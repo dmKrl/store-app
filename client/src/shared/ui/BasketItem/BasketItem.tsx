@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import s from './BasketItem.module.css';
-import changePriceView from 'shared/lib/changePriceView';
+import changePriceView from 'src/shared/lib/changePriceView';
 
 interface BasketItemProps {
     name: string;

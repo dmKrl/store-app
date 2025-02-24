@@ -1,9 +1,9 @@
-import MainButton from 'shared/ui/MainButton/MainButton';
-import KitDelivery from 'components/KitDelivery/KitDelivery';
-import ProductCharacteristics from 'components/ProductCharacteristics/ProductCharacteristics';
+import MainButton from 'src/shared/ui/MainButton/MainButton';
+import KitDelivery from 'src/components/KitDelivery/KitDelivery';
+import ProductCharacteristics from 'src/components/ProductCharacteristics/ProductCharacteristics';
 import s from './InfoProductPage.module.css';
 
-const InfoProductPage = () => {
+export const InfoProductPage = () => {
     return (
         <div className={s.infoProduct}>
             <div className="container">
@@ -48,4 +48,3 @@ const InfoProductPage = () => {
     );
 };
 
-export default InfoProductPage;
