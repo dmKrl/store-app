@@ -1,6 +1,6 @@
-import KitDelivery from '../../../components/KitDelivery/KitDelivery';
-import ProductCharacteristics from '../../../components/ProductCharacteristics/ProductCharacteristics';
-import MainButton from '../../../shared/ui/MainButton/MainButton';
+import MainButton from 'shared/ui/MainButton/MainButton';
+import KitDelivery from 'components/KitDelivery/KitDelivery';
+import ProductCharacteristics from 'components/ProductCharacteristics/ProductCharacteristics';
 import s from './InfoProductPage.module.css';
 
 const InfoProductPage = () => {

@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import CatalogButton from '../CatalogButton/CatalogButton';
 import s from './CatalogCard.module.css';
 import { Link } from 'react-router-dom';
+import CatalogButton from '../CatalogButton/CatalogButton';
 
 interface CatalogCardProps {
     cardButtonText: string;

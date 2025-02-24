@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useBasketStore } from '../../../features/store/BasketStore/BasketStore';
-import BasketDescription from '../../../components/BasketDescription/BasketDescription';
-import BasketResult from '../../../components/BasketResult/BasketResult';
-import BasketItem from '../../../shared/ui/BasketItem/BasketItem';
 import s from './BasketPage.module.css';
-import { useUsersStore } from '../../../features/store/UsersStore/UsersStore';
+import { useBasketStore, useUsersStore } from 'features/store';
+import BasketDescription from 'components/BasketDescription/BasketDescription';
+import BasketItem from 'shared/ui/BasketItem/BasketItem';
+import BasketResult from 'components/BasketResult/BasketResult';
 
 interface BasketPriceDevices {
     counter: number;
@@ -34,7 +33,7 @@ const BasketPage = () => {
         resetAllPrice();
         changeAllPrice();
         totalSetAllPrice(allPriceLocal);
-    }, [getAllBasketDevices, userState.userId, resetAllPrice]);
+    }, [userState.userId]);
 
     return (
         <div className={s.basketPageContainer}>

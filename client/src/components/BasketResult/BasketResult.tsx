@@ -1,8 +1,8 @@
 // import { current } from 'immer';
-import { useBasketStore } from '../../features/store/BasketStore/BasketStore';
-import MainButton from '../../shared/ui/MainButton/MainButton';
+import { useBasketStore } from 'features/store';
 import s from './BasketResult.module.css';
-import sumAllPriceBasketDevices from '../../shared/lib/sumAllPriceBasketDevices';
+import sumAllPriceBasketDevices from 'shared/lib/sumAllPriceBasketDevices';
+import MainButton from 'shared/ui/MainButton/MainButton';
 
 const BasketResult = () => {
     const { allPrice } = useBasketStore();

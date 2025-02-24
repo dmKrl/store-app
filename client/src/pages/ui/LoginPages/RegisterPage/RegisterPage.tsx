@@ -1,22 +1,25 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import s from './AuthPage.module.css';
-import ValidateError from '../../../shared/ui/ValidateError/ValidateError';
-import { useUsersStore } from '../../../features/store/UsersStore/UsersStore';
-import { useModalStore } from '../../../features/store/ModalStore/ModalStore';
+import s from '../styles/LoginPages.module.css';
 import { useNavigate } from 'react-router';
+import { useModalStore, useUsersStore } from 'features/store';
+import ValidateError from 'shared/ui/ValidateError/ValidateError';
 
 type Data = {
     email: string;
     password: string;
+    repeatPassword: string;
+    username: string;
 };
 
-const AuthPage = () => {
+const RegisterPage = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [responseError, setResponseError] = useState<string>('');
-    const { authUser, isLoading, setIsLoading } = useUsersStore();
+    const [repeatPassword, setRepeatPassword] = useState<string>('');
+    const [username, setUsername] = useState<string>('');
+    const [validatePassword, setValidatePassword] = useState<boolean>(false);
     const { switchVisibleModals, closeVisibleModals } = useModalStore();
+    const { isLoading, setIsLoading, registrationUser } = useUsersStore();
     const navigate = useNavigate();
 
     const {
@@ -27,24 +30,20 @@ const AuthPage = () => {
     } = useForm<Data>({ mode: 'onBlur' });
 
     const onSubmit = (data: Data) => {
+        if (password !== repeatPassword) {
+            return setValidatePassword(true);
+        }
         reset();
         setIsLoading();
-        authUser(data.email, data.password)
-            .then((response) => {
-                if (response.message) {
-                    throw new Error(response.message);
-                }
+        registrationUser(data.email, data.password, data.username)
+            .then(() => {
                 setIsLoading();
                 closeVisibleModals();
-                setResponseError('');
+                setValidatePassword(false);
                 navigate('/basket');
             })
-            .catch((error: unknown) => {
-                if (error instanceof Error) {
-                    setIsLoading();
-                    return setResponseError(error.message);
-                }
-                return setResponseError('Непредвиденная ошибка');
+            .catch(() => {
+                setIsLoading();
             });
     };
 
@@ -59,7 +58,7 @@ const AuthPage = () => {
                         <img src="image/apple.svg" alt="" />
                     </button>
                     <p className={s.formTitle}>
-                        Авторизуйтесь в интернет-магазине
+                        Зарегистрируйтесь в интернет-магазине
                     </p>
                     <form
                         className={s.form}
@@ -86,6 +85,7 @@ const AuthPage = () => {
                             className={s.formInput}
                             value={password}
                             type="password"
+                            minLength={8}
                             placeholder="Введите пароль"
                             {...register('password', {
                                 required: 'Поле обязательно к заполнению',
@@ -98,25 +98,58 @@ const AuthPage = () => {
                                 errorsMessage={errors?.password?.message}
                             />
                         )}
-                        {responseError && (
-                            <ValidateError errorsMessage={responseError} />
+                        <input
+                            className={s.formInput}
+                            value={repeatPassword}
+                            type="password"
+                            placeholder="Повторите пароль"
+                            {...register('repeatPassword', {
+                                required: 'Поле обязательно к заполнению',
+                                onChange: (event) =>
+                                    setRepeatPassword(event.target.value),
+                            })}
+                        />
+                        {errors?.repeatPassword && (
+                            <ValidateError
+                                errorsMessage={errors?.repeatPassword?.message}
+                            />
+                        )}
+                        <input
+                            className={s.formInput}
+                            value={username}
+                            type="text"
+                            placeholder="Введите логин"
+                            {...register('username', {
+                                required: 'Поле обязательно к заполнению',
+                                onChange: (event) =>
+                                    setUsername(event.target.value),
+                            })}
+                        />
+                        {errors?.username && (
+                            <ValidateError
+                                errorsMessage={errors?.username?.message}
+                            />
+                        )}
+                        {validatePassword && (
+                            <ValidateError
+                                errorsMessage={'Пароли не совпадают'}
+                            />
                         )}
                         <button
                             className={`${s.formSubmitButton} ${isLoading && s.formSubmitButtonDisabled}`}
                             type="submit"
-                            disabled={isLoading}
                         >
                             {isLoading ? (
                                 <span>Загрузка...</span>
                             ) : (
-                                <span>Авторизоваться</span>
+                                <span>Зарегистрироваться</span>
                             )}
                         </button>
                         <button
                             className={s.formLink}
                             onClick={switchVisibleModals}
                         >
-                            Зарегистрироваться
+                            Авторизоваться
                         </button>
                     </form>
                 </div>
@@ -125,4 +158,4 @@ const AuthPage = () => {
     );
 };
 
-export default AuthPage;
+export default RegisterPage;

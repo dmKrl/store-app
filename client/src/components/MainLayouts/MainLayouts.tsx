@@ -1,8 +1,8 @@
-import About from '../About/About';
-import CatalogComponent from '../CatalogList/CatalogList';
-import Characteristics from '../MainCharacteristics/MainCharacteristics';
-import FAQ from '../FAQ/FAQ';
-import TopContent from '../TopContent/TopContent';
+import About from "components/About/About";
+import CatalogComponent from "components/CatalogList/CatalogList";
+import FAQ from "components/FAQ/FAQ";
+import Characteristics from "components/MainCharacteristics/MainCharacteristics";
+import TopContent from "components/TopContent/TopContent";
 
 const MainLayouts = () => {
     return (

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import NavBar from '../../../components/NavBar/NavBar';
-import UserLogo from '../../../components/UserLogo/UserLogo';
+import NavBar from '../NavBar/NavBar';
+import UserLogo from '../../../shared/ui/UserLogo/UserLogo';
 import s from './Header.module.css';
 import imgPath from '../../../../config';
 

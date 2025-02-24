@@ -1,5 +1,5 @@
+import MainButton from 'shared/ui/MainButton/MainButton';
 import s from './About.module.css';
-import MainButton from '../../shared/ui/MainButton/MainButton';
 
 const About = () => {
     return (
