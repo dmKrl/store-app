@@ -9,7 +9,7 @@ function App() {
 
     useEffect(() => {
         getAllDevices();
-    }, [getAllDevices]);
+    }, []);
     return (
         <div className="app">
             <div className="wrapper">
